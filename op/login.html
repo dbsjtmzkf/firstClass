@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../font/css/notosanskr.css">
+    <link rel="stylesheet" href="login.css">
+    <title>버거킹 로그인</title>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1>로그인</h1>
+            <button type="button" class="prev_btn">
+                <span class="sr-only">이전 버튼</span>
+            </button>
+        </header>
+
+        <main>
+            <section class="login">
+                <h2 class="login_title">
+                    <span>안녕하세요:)</span>
+                    <strong>버거킹입니다.</strong>
+                </h2>
+
+                <form action="">
+                    <fieldset>
+                        <legend class="sr-only">로그인</legend>
+
+                        <div class="input_box">
+                            <label for="email">이메일</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="아이디(이메일)을 입력해 주세요."
+                            >
+                        </div>
+
+                        <div class="input_box rela">
+                            <label for="password">비밀번호</label>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="비밀번호를 입력해 주세요."
+                            >
+                            <button type="button" class="pw_btn">
+                                <span class="sr-only">비밀번호 보기</span>
+                            </button>
+                        </div>
+
+                        <div class="login_option">
+                            <label>
+                                <input type="checkbox" class="sr-only" name="auto-login">
+                                <span>자동 로그인</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" class="sr-only" name="save-id">
+                                <span>아이디 저장</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="login_btn">로그인</button>
+                    </fieldset>
+                </form>
+
+                <nav class="login_link" aria-label="로그인 관련 메뉴">
+                    <a href="#">아이디 찾기</a>
+                    <a href="../m/password.html">비밀번호 재설정</a>
+                    <a href="#">회원가입</a>
+                </nav>
+            </section>
+
+            <section class="sns_login">
+                <h2 class="sr-only">SNS 로그인</h2>
+                <p>간편하게 로그인</p>
+
+                <div class="sns_list">
+                    <a href="#">
+                        <img src="../m/img/kakao.svg" alt="카카오 로그인">
+                    </a>
+                    <a href="#">
+                        <img src="../m/img/naver.svg" alt="네이버 로그인">
+                    </a>
+                    <a href="#">
+                        <img src="../m/img/apple.svg" alt="애플 로그인">
+                    </a>
+                    <a href="#">
+                        <img src="../m/img/삼성카드.svg" alt="삼성카드 로그인">
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
