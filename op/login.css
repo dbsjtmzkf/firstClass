@@ -3,14 +3,13 @@
 :root {
     --font: "Noto Sans KR", sans-serif;
 
-    /* Figma의 실제 컬러값을 확인할 수 없어서 1차 구현용 변수로 분리 */
-    --brand-red: #E50914;
-    --bg: #000000;
-    --surface: #161616;
-    --input-bg: #333333;
-    --text: #FFFFFF;
-    --sub-text: #B3B3B3;
-    --border: #8C8C8C;
+    --black: #000000;
+    --white: #FFFFFF;
+    --gray-333: #333333;
+    --gray-8c: #8C8C8C;
+    --red: #E50914;
+    --blue: #0071EB;
+    --gray-b3: #B3B3B3;
 }
 
 html {
@@ -19,8 +18,8 @@ html {
 
 body {
     min-width: 360px;
-    background-color: var(--bg);
-    color: var(--text);
+    background-color: var(--black);
+    color: var(--white);
     font-family: var(--font);
     font-size: 1.6rem;
     font-weight: 400;
@@ -32,20 +31,22 @@ body {
     min-width: 360px;
     min-height: 100dvh;
     margin: 0 auto;
-    background-color: var(--bg);
+    background-color: var(--black);
 }
 
 header {
     display: flex;
     align-items: center;
-    padding: 28px 24px;
+    padding: 24px;
 }
 
 .logo {
-    color: var(--brand-red);
-    font-size: 2.8rem;
-    font-weight: 900;
-    letter-spacing: -0.08em;
+    display: block;
+}
+
+.logo img {
+    width: 160px;
+    height: auto;
 }
 
 main {
@@ -73,7 +74,7 @@ main {
 .input_box label {
     display: block;
     margin-bottom: 8px;
-    color: var(--sub-text);
+    color: var(--gray-b3);
     font-size: 1.4rem;
 }
 
@@ -81,19 +82,19 @@ main {
     width: 100%;
     height: 52px;
     padding: 0 16px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--gray-8c);
     border-radius: 4px;
-    background-color: var(--input-bg);
-    color: var(--text);
+    background-color: var(--gray-333);
+    color: var(--white);
     font-size: 1.5rem;
 }
 
 .input_box input::placeholder {
-    color: var(--sub-text);
+    color: var(--gray-b3);
 }
 
 .input_box input:focus-visible {
-    outline: 2px solid var(--text);
+    outline: 2px solid var(--white);
     outline-offset: 1px;
 }
 
@@ -102,8 +103,8 @@ main {
     height: 52px;
     margin-top: 24px;
     border-radius: 4px;
-    background-color: var(--brand-red);
-    color: var(--text);
+    background-color: var(--red);
+    color: var(--white);
     font-size: 1.6rem;
     font-weight: 700;
 }
@@ -114,36 +115,37 @@ main {
     align-items: center;
     gap: 16px;
     margin-top: 16px;
-    color: var(--sub-text);
+    color: var(--gray-b3);
     font-size: 1.3rem;
 }
 
-.login_option label {
+.remember {
     display: inline-flex;
     align-items: center;
 }
 
-.login_option label span {
+.remember span {
     display: inline-flex;
     align-items: center;
     gap: 7px;
 }
 
-.login_option label span::before {
+.remember span::before {
     content: "";
     width: 18px;
     height: 18px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--gray-8c);
     border-radius: 2px;
-    background-color: var(--input-bg);
+    background-color: var(--gray-333);
 }
 
-.login_option input:checked + span::before {
-    background-color: var(--brand-red);
-    box-shadow: inset 0 0 0 3px var(--input-bg);
+.remember input:checked + span::before {
+    background-color: var(--red);
+    box-shadow: inset 0 0 0 3px var(--gray-333);
 }
 
 .login_option a {
+    color: var(--blue);
     text-decoration: underline;
     text-underline-offset: 3px;
 }
@@ -153,17 +155,17 @@ main {
     align-items: center;
     gap: 6px;
     margin-top: 52px;
-    color: var(--sub-text);
+    color: var(--gray-b3);
     font-size: 1.4rem;
 }
 
 .signup a {
-    color: var(--text);
+    color: var(--blue);
 }
 
 .recaptcha {
     margin-top: 28px;
-    color: var(--sub-text);
+    color: var(--gray-8c);
     font-size: 1.2rem;
     line-height: 1.6;
 }
@@ -173,8 +175,8 @@ footer {
     flex-wrap: wrap;
     gap: 16px 24px;
     padding: 28px 24px 40px;
-    border-top: 1px solid #222;
-    color: var(--sub-text);
+    border-top: 1px solid var(--gray-333);
+    color: var(--gray-b3);
     font-size: 1.2rem;
 }
 
@@ -185,7 +187,7 @@ footer a {
 
 @media (max-width: 600px) {
     header {
-        padding: 20px 20px;
+        padding: 20px;
     }
 
     main {
