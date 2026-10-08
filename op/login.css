@@ -2,13 +2,15 @@
 
 :root {
     --font: "Noto Sans KR", sans-serif;
-    --primary: #502314;
-    --disabled-bg: #DCCDBE;
-    --focus: #D62302;
-    --base-border: #D8CBC0;
-    --text: #6F5B50;
-    --bg: #F5EBDD;
-    --input-bg: #FFFDFB;
+
+    /* Figma의 실제 컬러값을 확인할 수 없어서 1차 구현용 변수로 분리 */
+    --brand-red: #E50914;
+    --bg: #000000;
+    --surface: #161616;
+    --input-bg: #333333;
+    --text: #FFFFFF;
+    --sub-text: #B3B3B3;
+    --border: #8C8C8C;
 }
 
 html {
@@ -16,9 +18,12 @@ html {
 }
 
 body {
+    min-width: 360px;
+    background-color: var(--bg);
+    color: var(--text);
     font-family: var(--font);
-    font-weight: 400;
     font-size: 1.6rem;
+    font-weight: 400;
 }
 
 #wrap {
@@ -31,205 +36,168 @@ body {
 }
 
 header {
-    position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 58px;
+    padding: 28px 24px;
 }
 
-header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary);
-}
-
-.prev_btn {
-    position: absolute;
-    left: 0;
-    width: 48px;
-    height: 48px;
-    background: url("../m/img/back_icon.svg") no-repeat center / auto;
+.logo {
+    color: var(--brand-red);
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: -0.08em;
 }
 
 main {
-    padding: 35px 20px 90px;
+    display: flex;
+    justify-content: center;
+    padding: 44px 24px 80px;
+}
+
+.login {
+    width: 100%;
+    max-width: 450px;
 }
 
 .login_title {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 42px;
-    color: var(--primary);
-}
-
-.login_title span {
-    font-size: 2.4rem;
+    margin-bottom: 28px;
+    font-size: 3.2rem;
     line-height: 1.2;
     font-weight: 700;
 }
 
-.login_title strong {
-    font-size: 3.4rem;
-    line-height: 1.15;
-    font-weight: 900;
-}
-
 .input_box + .input_box {
-    margin-top: 12px;
-}
-
-.input_box {
-    position: relative;
+    margin-top: 16px;
 }
 
 .input_box label {
     display: block;
-    margin-bottom: 7px;
+    margin-bottom: 8px;
+    color: var(--sub-text);
     font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--primary);
 }
 
-input[type="email"],
-input[type="password"] {
+.input_box input {
     width: 100%;
-    height: 50px;
-    padding: 0 20px;
-    border: 1px solid var(--base-border);
-    border-radius: 10px;
+    height: 52px;
+    padding: 0 16px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
     background-color: var(--input-bg);
+    color: var(--text);
     font-size: 1.5rem;
 }
 
-input::placeholder {
-    color: #A99A90;
+.input_box input::placeholder {
+    color: var(--sub-text);
 }
 
-.input_box.rela .pw_btn {
-    position: absolute;
-    right: 16px;
-    bottom: 12px;
-    width: 26px;
-    height: 26px;
-    background: url("../m/img/eye_icon.svg") no-repeat center / 26px;
+.input_box input:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 1px;
+}
+
+.login_btn {
+    width: 100%;
+    height: 52px;
+    margin-top: 24px;
+    border-radius: 4px;
+    background-color: var(--brand-red);
+    color: var(--text);
+    font-size: 1.6rem;
+    font-weight: 700;
 }
 
 .login_option {
     display: flex;
-    gap: 28px;
-    margin-top: 10px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+    color: var(--sub-text);
+    font-size: 1.3rem;
 }
 
 .login_option label {
     display: inline-flex;
+    align-items: center;
 }
 
 .login_option label span {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    color: var(--text);
-    font-size: 1.4rem;
+    gap: 7px;
 }
 
 .login_option label span::before {
     content: "";
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    background: url("../m/img/state=disabled.svg") no-repeat center / contain;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background-color: var(--input-bg);
 }
 
 .login_option input:checked + span::before {
-    background-image: url("../m/img/state=Activefs.svg");
+    background-color: var(--brand-red);
+    box-shadow: inset 0 0 0 3px var(--input-bg);
 }
 
-.login_btn {
-    width: 100%;
-    height: 46px;
-    margin-top: 24px;
-    border-radius: 23px;
-    background-color: var(--primary);
-    color: var(--input-bg);
-    font-size: 1.6rem;
-    font-weight: 700;
+.login_option a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
-.login_link {
+.signup {
     display: flex;
-    justify-content: center;
-    margin-top: 18px;
+    align-items: center;
+    gap: 6px;
+    margin-top: 52px;
+    color: var(--sub-text);
     font-size: 1.4rem;
+}
+
+.signup a {
     color: var(--text);
 }
 
-.login_link a {
-    display: inline-flex;
-    align-items: center;
+.recaptcha {
+    margin-top: 28px;
+    color: var(--sub-text);
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
 
-.login_link a:not(:last-child)::after {
-    content: "";
-    display: inline-block;
-    width: 1px;
-    height: 12px;
-    margin: 0 10px;
-    background-color: var(--base-border);
-}
-
-.sns_login {
-    margin-top: 84px;
-}
-
-.sns_login > p {
+footer {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 30px;
-    color: var(--text);
-    font-size: 1.3rem;
-    white-space: nowrap;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    padding: 28px 24px 40px;
+    border-top: 1px solid #222;
+    color: var(--sub-text);
+    font-size: 1.2rem;
 }
 
-.sns_login > p::before,
-.sns_login > p::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background-color: var(--base-border);
+footer a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
-.sns_list {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-}
+@media (max-width: 600px) {
+    header {
+        padding: 20px 20px;
+    }
 
-.sns_list a {
-    display: block;
-    width: 45px;
-    height: 45px;
-}
-
-.sns_list img {
-    width: 45px;
-    height: 45px;
-    object-fit: contain;
-}
-
-@media (max-width: 390px) {
     main {
-        padding-left: 18px;
-        padding-right: 18px;
+        padding: 36px 20px 64px;
     }
 
-    .login_title strong {
-        font-size: 3.2rem;
+    .login_title {
+        font-size: 2.8rem;
     }
 
-    .sns_list {
-        gap: 16px;
+    footer {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
