@@ -25,17 +25,13 @@
             --bg:#F4EBDC;
             --inputBg:#FFFCF9;
        }
-       html {
-        font-size: 62.5%;
-       }
+       html { font-size: 62.5%; }
        body {
             font-family: var(--font);
             font-weight: 300;
             font-size: 1.6rem;
        }
-       a {
-        color: inherit;
-       }
+       a { color: inherit; }
        #wrap {
         width: 100%;
         max-width: 1024px;
@@ -55,22 +51,10 @@
         left: 0;
         width: 48px;
         height: 48px;
-       /* background-color: red;
-        background-image: url(img/back_icom.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: scroll;
-        background-size: auto;*/
-
-        background: url(img/back_icon.svg)
-        no-repeat scroll center / auto;
+        background: url(img/back_icon.svg) no-repeat scroll center / auto;
        }
-       h1 {
-        font-size: 2.0rem;
-       }
-       main {
-        padding: 20px 20px 90px;
-       }
+       h1 { font-size: 2.0rem; }
+       main { padding: 20px 20px 90px; }
        .title {
         display: flex;
         flex-direction: column;
@@ -89,48 +73,27 @@
        input {
         border: 1px solid var(--baseBorder);
         background-color: var(--inputBg);
-       } 
-       input::placeholder{
-        color: var(--placeholder);
        }
-       .email {
-        font-size: 1.5rem;
-        line-height: 1;
-       }
+       input::placeholder { color: var(--placeholder); }
+       .email { font-size: 1.5rem; line-height: 1; }
        input[type="email"],
        input[type="password"] {
-        /*input 요소는 기본적으로 inline-block속성을 가짐*/
         width: 100%;
         height: 50px;
         padding: 0 20px;
         border-radius: 10px;
        }
-       .input_box.rela {
-        position: relative;
-       }
+       .input_box.rela { position: relative; }
        .pw_btn {
         position: absolute;
         right: 20px;
         bottom: 12px;
         width: 26px;
         height: 26px;
-        background: url(img/eye_icon.svg) no-repeat center/26px ;
+        background: url(img/eye_icon.svg) no-repeat center/26px;
        }
-       .pw_btn {
-        width: 26px;
-        height: 26px;
-       }
-       input[type="checkbox"] {
-        width: 30px;
-        height: 30px;
-        background-color: red;
-       }
-       .login_option label {
-        display: inline-flex;
-       }
-       .login_option label:first-child {
-        margin-right: 30px;
-       }
+       .login_option label { display: inline-flex; }
+       .login_option label:first-child { margin-right: 30px; }
        .login_option span {
         display: inline-flex;
         align-items: center;
@@ -141,17 +104,14 @@
         display: inline-block;
         width: 30px;
         height: 30px;
-        background: url(img/state=disabled.svg)
-        no-repeat center / contain;
+        background: url(img/state=disabled.svg) no-repeat center / contain;
        }
        .login_option .check:checked + span::before {
         content: "";
         background-image: url(img/state=Activefs.svg);
        }
-       /* button요소는 기본적으로 상속이 불가하여 상속에 관련된 값을 따로 넣어야함 */
        .login_btn {
         width: 100%;
-        /*mex-width: 100%;*/
         height: 44px;
         border-radius: 22px;
         font-family: inherit;
@@ -160,10 +120,8 @@
         background-color: var(--primary);
         border: none;
         opacity: 0.2;
-       } 
-       a {
-        text-decoration: none;
        }
+       a { text-decoration: none; }
        .login_link {
         margin-top: 20px;
         font-family: var(--font-pre);
@@ -171,7 +129,7 @@
         font-size: 1.4rem;
         text-align: center;
        }
-       .login_link a{
+       .login_link a {
         display: inline-flex;
         align-items: center;
         columns-gap: 4px;
@@ -184,13 +142,8 @@
         background-color: var(--primary);
         opacity: 1;
        }
-       .login_link a:last-child::after {
-        content: "";
-        display: none;
-       }
-       .sns_login {
-        margin-top: 96px;
-       }
+       .login_link a:last-child::after { content: ""; display: none; }
+       .sns_login { margin-top: 96px; }
        .sns_login > p {
         display: flex;
         justify-content: center;
@@ -223,22 +176,10 @@
         background-position: center;
         background-size: 45px;
        }
-       .sns_list > a:first-child {
-        background-image: url(img/kakao.svg);
-       }
-       .sns_list > a:nth-child(2) {
-        background-image: url(img/naver.svg);
-       }
-       .sns_list > a:nth-child(3) {
-        background-image: url(img/apple.svg);
-       }
-       .sns_list > a:last-child {
-        background-image: url(img/삼성카드.svg);
-       }
-       /*   header {
-                background-color: darkgreen;
-                text-align: center;
-       } */
+       .sns_list > a:first-child { background-image: url(img/kakao.svg); }
+       .sns_list > a:nth-child(2) { background-image: url(img/naver.svg); }
+       .sns_list > a:nth-child(3) { background-image: url(img/apple.svg); }
+       .sns_list > a:last-child { background-image: url(img/삼성카드.svg); }
     </style>
 </head>
 <body>
@@ -250,24 +191,22 @@
         <main>
             <h2 class="title">
                 <span>안녕하세요:)</span>
-                <span>부거킹입이다.</span>
+                <span>버거킹입니다.</span>
             </h2>
             <form action="">
-                <!-- 이메일 로그인 -->
                 <fieldset>
                     <legend class="sr-only">로그인화면</legend>
-                    <!-- 아이디 -->
                     <label for="email">이메일 로그인</label>
                     <div class="input_box">
                         <input type="email" id="email" name="email"
                         placeholder="아이디(이메일)을 입력해 주세요.">
                     </div>
-                    <!-- 비밀번호 -->
                     <div class="input_box rela">
                         <input type="password" name="password"
                         placeholder="비밀번호를 입력해 주세요">
-                        <button type="button"
-                        class="pw_btn"><span class="sr-only">비밀번호 보기</span></button>
+                        <button type="button" class="pw_btn">
+                            <span class="sr-only">비밀번호 보기</span>
+                        </button>
                     </div>
                     <div class="login_option">
                         <label>
