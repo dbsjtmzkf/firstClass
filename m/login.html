@@ -9,6 +9,41 @@
     <link rel="stylesheet" href="../css/default.css">
     <title>버거킹</title>
     <style>
+       @font-face {
+        font-family: "Pretendard Variable";
+        src: url("../font/PretendardVariable.woff2") format("woff2");
+        font-weight: 100 900;
+        font-style: normal;
+       }
+
+       @font-face {
+        font-family: "BKR";
+        src: url("../font/BKBulMatPro-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+       }
+
+       @font-face {
+        font-family: "Sandoll GothicNeoRound";
+        src: url("../font/SDGothicNeoRound-eMd.woff") format("woff");
+        font-weight: 500;
+        font-style: normal;
+       }
+
+       @font-face {
+        font-family: "Sandoll GothicNeoRound";
+        src: url("../font/SDGothicNeoRound-gBd.woff") format("woff");
+        font-weight: 700;
+        font-style: normal;
+       }
+
+       @font-face {
+        font-family: "Sandoll GothicNeoRound";
+        src: url("../font/SDGothicNeoRound-hEb.woff") format("woff");
+        font-weight: 800;
+        font-style: normal;
+       }
+
        :root {
             --font: "Sandoll GothicNeoRound", sans-serif;
             --font-pre: "Pretendard Variable", sans-serif;
@@ -45,6 +80,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 58px;
        }
        .prev_btn {
         position: absolute;
@@ -54,7 +90,7 @@
         background: url(img/back_icon.svg) no-repeat scroll center / auto;
        }
        h1 { font-size: 2.0rem; }
-       main { padding: 20px 20px 90px; }
+       main { padding: 35px 20px 90px; }
        .title {
         display: flex;
         flex-direction: column;
@@ -69,6 +105,10 @@
        .title > span:last-child {
         font-size: 3.5rem;
         line-height: 1;
+       }
+
+       .input_box + .input_box {
+        margin-top: 10px;
        }
        input {
         border: 1px solid var(--baseBorder);
@@ -92,6 +132,10 @@
         height: 26px;
         background: url(img/eye_icon.svg) no-repeat center/26px;
        }
+       .login_option {
+        margin-top: 8px;
+       }
+
        .login_option label { display: inline-flex; }
        .login_option label:first-child { margin-right: 30px; }
        .login_option span {
