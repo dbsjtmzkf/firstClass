@@ -1,71 +1,124 @@
 body {
     background-color: yellow;
-    font-family: "Pretendard Variable",sans-serif;
+    font-family: "Pretendard Variable", sans-serif;
 }
+
 .mo {
     display: none;
 }
+
 .hero-sec .swiper {
     width: 100%;
     height: 600px;
 }
+
 .hero-sec .swiper img {
     height: 100%;
     object-fit: cover;
 }
 
-/* 메인 배너 Swiper 컨트롤: 참고 이미지처럼 우측 하단 도트형 페이지네이션 */
+/* 메인 배너 Swiper 컨트롤: Figma 참고 화면 기준 */
 .hero-sec .visual {
     position: relative;
 }
 
+/* 하단 중앙의 흰색 도트 + 빨간색 활성 도트 */
 .hero-sec .visual .swiper-pagination {
     position: absolute;
-    right: max(24px, calc((100% - 1200px) / 2));
-    bottom: 42px;
-    left: auto;
+    right: 0;
+    bottom: 12px;
+    left: 0;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 8px;
-    width: auto;
+    width: 100%;
 }
 
 .hero-sec .visual .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
+    width: 14px;
+    height: 14px;
     margin: 0 !important;
-    border-radius: 999px;
+    border-radius: 50%;
     background: #fff;
-    opacity: 1;
-    transition: width 0.25s ease, background-color 0.25s ease;
+    opacity: 0.9;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .hero-sec .visual .swiper-pagination-bullet-active {
-    width: 27px;
-    background: #ffd21f;
+    background: #ed1238;
+    opacity: 1;
 }
 
-/* 참고 이미지에서는 좌우 화살표와 스크롤바를 노출하지 않음 */
+/* 좌우 중앙의 얇은 흰색 화살표 */
 .hero-sec .visual .swiper-button-prev,
-.hero-sec .visual .swiper-button-next,
+.hero-sec .visual .swiper-button-next {
+    display: flex;
+    top: 50%;
+    width: 42px;
+    height: 64px;
+    margin-top: 0;
+    color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-50%);
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.hero-sec .visual .swiper-button-prev {
+    left: 24px;
+}
+
+.hero-sec .visual .swiper-button-next {
+    right: 24px;
+}
+
+.hero-sec .visual .swiper-button-prev::after,
+.hero-sec .visual .swiper-button-next::after {
+    font-family: swiper-icons;
+    font-size: 42px;
+    font-weight: 200;
+}
+
+.hero-sec .visual .swiper-button-prev:hover,
+.hero-sec .visual .swiper-button-next:hover {
+    color: #fff;
+}
+
+/* 참고 화면에는 별도의 스크롤바가 보이지 않아 숨김 */
 .hero-sec .visual .swiper-scrollbar {
     display: none;
 }
 
 @media (max-width: 767px) {
+    .hero-sec .swiper {
+        height: auto;
+    }
+
     .hero-sec .visual .swiper-pagination {
-        right: 20px;
-        bottom: 20px;
+        bottom: 10px;
         gap: 6px;
     }
 
     .hero-sec .visual .swiper-pagination-bullet {
-        width: 7px;
-        height: 7px;
+        width: 8px;
+        height: 8px;
     }
 
-    .hero-sec .visual .swiper-pagination-bullet-active {
-        width: 20px;
+    .hero-sec .visual .swiper-button-prev,
+    .hero-sec .visual .swiper-button-next {
+        width: 28px;
+        height: 44px;
+    }
+
+    .hero-sec .visual .swiper-button-prev {
+        left: 8px;
+    }
+
+    .hero-sec .visual .swiper-button-next {
+        right: 8px;
+    }
+
+    .hero-sec .visual .swiper-button-prev::after,
+    .hero-sec .visual .swiper-button-next::after {
+        font-size: 28px;
     }
 }
