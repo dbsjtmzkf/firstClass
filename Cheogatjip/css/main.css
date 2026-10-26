@@ -13,3 +13,59 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
+/* 메인 배너 Swiper 컨트롤: 참고 이미지처럼 우측 하단 도트형 페이지네이션 */
+.hero-sec .visual {
+    position: relative;
+}
+
+.hero-sec .visual .swiper-pagination {
+    position: absolute;
+    right: max(24px, calc((100% - 1200px) / 2));
+    bottom: 42px;
+    left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    width: auto;
+}
+
+.hero-sec .visual .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    margin: 0 !important;
+    border-radius: 999px;
+    background: #fff;
+    opacity: 1;
+    transition: width 0.25s ease, background-color 0.25s ease;
+}
+
+.hero-sec .visual .swiper-pagination-bullet-active {
+    width: 27px;
+    background: #ffd21f;
+}
+
+/* 참고 이미지에서는 좌우 화살표와 스크롤바를 노출하지 않음 */
+.hero-sec .visual .swiper-button-prev,
+.hero-sec .visual .swiper-button-next,
+.hero-sec .visual .swiper-scrollbar {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .hero-sec .visual .swiper-pagination {
+        right: 20px;
+        bottom: 20px;
+        gap: 6px;
+    }
+
+    .hero-sec .visual .swiper-pagination-bullet {
+        width: 7px;
+        height: 7px;
+    }
+
+    .hero-sec .visual .swiper-pagination-bullet-active {
+        width: 20px;
+    }
+}
