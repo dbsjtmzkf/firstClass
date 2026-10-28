@@ -1,125 +1,6 @@
-:root {
-    /* Figma brand color variables */
-    --brand-red: #D71920;
-    --brand-coral: #FF6B6B;
-    --brand-yellow: #FFC107;
-
-    /* Text colors */
-    --text-primary: #1A1A1A;
-    --text-secondary: #4A4A4A;
-    --text-tertiary: #6B7280;
-    --text-inverse: #FFFFFF;
-
-    /* Surface and border colors */
-    --surface-white: #FFFFFF;
-    --surface-muted: #F0F2F5;
-    --border-default: #E5E7EB;
-    --surface-dark: #222222;
-
-    /* Soft accent backgrounds */
-    --surface-brand-soft: #FFE3E6;
-    --surface-blue-soft: #E6EEF6;
-
-    /* Typography */
-    --font-family-base: "Pretendard Variable", Pretendard, sans-serif;
-}
-
 body {
-    background-color: var(--surface-muted);
-    font-family: var(--font-family-base);
-}
-
-
-/* Figma node 15:29 — header positioned above the main visual banner */
-.site-header {
-    width: 100%;
-    padding: 0 20px;
-    background: #c23c3c;
-}
-
-.header-brand,
-.main-nav {
-    width: 100%;
-    max-width: 1720px;
-    margin: 0 auto;
-    background: var(--surface-white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.header-brand {
-    height: 80px;
-}
-
-.brand-logo {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--brand-red);
-    font-size: 25px;
-    line-height: 1;
-    font-weight: 800;
-    letter-spacing: -1.2px;
-    text-decoration: none;
-}
-
-.brand-logo span {
-    margin-top: 3px;
-    color: var(--text-primary);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.main-nav {
-    height: 60px;
-    gap: clamp(24px, 4.4vw, 85px);
-    border-top: 1px solid var(--border-default);
-}
-
-.main-nav a {
-    color: var(--text-primary);
-    font-family: var(--font-family-base);
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 1;
-    white-space: nowrap;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.main-nav a:hover,
-.main-nav a:focus-visible {
-    color: var(--brand-red);
-}
-
-@media (max-width: 767px) {
-    .site-header {
-        padding: 0;
-    }
-
-    .header-brand {
-        height: 64px;
-    }
-
-    .brand-logo {
-        font-size: 21px;
-    }
-
-    .main-nav {
-        height: auto;
-        min-height: 48px;
-        justify-content: flex-start;
-        gap: 24px;
-        padding: 0 16px;
-        overflow-x: auto;
-    }
-
-    .main-nav a {
-        font-size: 14px;
-    }
+    background-color: yellow;
+    font-family: "Pretendard Variable", sans-serif;
 }
 
 .mo {
@@ -160,13 +41,13 @@ body {
     height: 14px;
     margin: 0 !important;
     border-radius: 50%;
-    background: var(--surface-white);
+    background: #fff;
     opacity: 0.9;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .hero-sec .visual .swiper-pagination-bullet-active {
-    background: var(--brand-red);
+    background: #ed1238;
     opacity: 1;
 }
 
@@ -200,7 +81,7 @@ body {
 
 .hero-sec .visual .swiper-button-prev:hover,
 .hero-sec .visual .swiper-button-next:hover {
-    color: var(--surface-white);
+    color: #fff;
 }
 
 /* 참고 화면에는 별도의 스크롤바가 보이지 않아 숨김 */
