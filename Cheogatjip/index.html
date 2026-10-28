@@ -132,5 +132,39 @@
             },
         });
     </script>
+    <script>
+        // 상단 메뉴에 잠깐 머물렀을 때만 메가 메뉴를 펼칩니다.
+        const siteHeader = document.querySelector('.site-header');
+        let menuOpenTimer;
+        let menuCloseTimer;
+
+        if (siteHeader) {
+            siteHeader.addEventListener('mouseenter', () => {
+                window.clearTimeout(menuCloseTimer);
+                window.clearTimeout(menuOpenTimer);
+                menuOpenTimer = window.setTimeout(() => {
+                    siteHeader.classList.add('is-menu-open');
+                }, 180);
+            });
+
+            siteHeader.addEventListener('mouseleave', () => {
+                window.clearTimeout(menuOpenTimer);
+                menuCloseTimer = window.setTimeout(() => {
+                    siteHeader.classList.remove('is-menu-open');
+                }, 100);
+            });
+
+            siteHeader.addEventListener('focusin', () => {
+                window.clearTimeout(menuOpenTimer);
+                siteHeader.classList.add('is-menu-open');
+            });
+
+            siteHeader.addEventListener('focusout', (event) => {
+                if (!siteHeader.contains(event.relatedTarget)) {
+                    siteHeader.classList.remove('is-menu-open');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
