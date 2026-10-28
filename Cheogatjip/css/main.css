@@ -289,11 +289,20 @@ body {
 
 .app-section-images {
     display: flex;
-    align-items: stretch;
+    align-items: center;
     justify-content: center;
-    gap: 24px;
+    gap: 0;
     width: min(100%, 1648px);
     margin: 0 auto;
+}
+
+.app-section-images img {
+    display: block;
+    width: 50%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    object-fit: contain;
 }
 
 .app-section-images img {
