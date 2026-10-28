@@ -1,6 +1,32 @@
+:root {
+    /* Figma brand color variables */
+    --brand-red: #D71920;
+    --brand-coral: #FF6B6B;
+    --brand-yellow: #FFC107;
+
+    /* Text colors */
+    --text-primary: #1A1A1A;
+    --text-secondary: #4A4A4A;
+    --text-tertiary: #6B7280;
+    --text-inverse: #FFFFFF;
+
+    /* Surface and border colors */
+    --surface-white: #FFFFFF;
+    --surface-muted: #F0F2F5;
+    --border-default: #E5E7EB;
+    --surface-dark: #222222;
+
+    /* Soft accent backgrounds */
+    --surface-brand-soft: #FFE3E6;
+    --surface-blue-soft: #E6EEF6;
+
+    /* Typography */
+    --font-family-base: "Pretendard Variable", Pretendard, sans-serif;
+}
+
 body {
-    background-color: yellow;
-    font-family: "Pretendard Variable", sans-serif;
+    background-color: var(--surface-muted);
+    font-family: var(--font-family-base);
 }
 
 .mo {
@@ -41,13 +67,13 @@ body {
     height: 14px;
     margin: 0 !important;
     border-radius: 50%;
-    background: #fff;
+    background: var(--surface-white);
     opacity: 0.9;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .hero-sec .visual .swiper-pagination-bullet-active {
-    background: #ed1238;
+    background: var(--brand-red);
     opacity: 1;
 }
 
@@ -81,7 +107,7 @@ body {
 
 .hero-sec .visual .swiper-button-prev:hover,
 .hero-sec .visual .swiper-button-next:hover {
-    color: #fff;
+    color: var(--surface-white);
 }
 
 /* 참고 화면에는 별도의 스크롤바가 보이지 않아 숨김 */
