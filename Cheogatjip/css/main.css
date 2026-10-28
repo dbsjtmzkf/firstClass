@@ -225,3 +225,109 @@ body {
         flex: 0 0 auto;
     }
 }
+
+
+/* Figma Section 3: content below the main banner */
+.home-section {
+    width: 100%;
+    padding: 88px 24px;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+}
+
+.home-section:nth-of-type(even) {
+    background: #f7f7f7;
+}
+
+.section-heading {
+    margin: 0 auto 36px;
+    max-width: 1100px;
+    color: #222;
+}
+
+.section-eyebrow {
+    margin: 0 0 12px;
+    color: #d71920;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.section-heading h2 {
+    margin: 0 0 12px;
+    font-size: clamp(28px, 3vw, 44px);
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.section-heading > p:last-child {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.section-image {
+    display: block;
+    width: min(100%, 1365px);
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.menu-feature-image {
+    width: min(100%, 1405px);
+}
+
+.webzine-section {
+    background: #fff;
+}
+
+.store-section {
+    background: #f7f7f7;
+}
+
+.app-section-images {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 24px;
+    width: min(100%, 1648px);
+    margin: 0 auto;
+}
+
+.app-section-images img {
+    display: block;
+    width: 50%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 767px) {
+    .home-section {
+        padding: 48px 16px;
+    }
+
+    .section-heading {
+        margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .section-heading > p:last-child {
+        font-size: 15px;
+    }
+
+    .app-section-images {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .app-section-images img {
+        width: 100%;
+    }
+}
