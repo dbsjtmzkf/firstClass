@@ -29,6 +29,99 @@ body {
     font-family: var(--font-family-base);
 }
 
+
+/* Figma node 15:29 — header positioned above the main visual banner */
+.site-header {
+    width: 100%;
+    padding: 0 20px;
+    background: #c23c3c;
+}
+
+.header-brand,
+.main-nav {
+    width: 100%;
+    max-width: 1720px;
+    margin: 0 auto;
+    background: var(--surface-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-brand {
+    height: 80px;
+}
+
+.brand-logo {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-red);
+    font-size: 25px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -1.2px;
+    text-decoration: none;
+}
+
+.brand-logo span {
+    margin-top: 3px;
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.main-nav {
+    height: 60px;
+    gap: clamp(24px, 4.4vw, 85px);
+    border-top: 1px solid var(--border-default);
+}
+
+.main-nav a {
+    color: var(--text-primary);
+    font-family: var(--font-family-base);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+    color: var(--brand-red);
+}
+
+@media (max-width: 767px) {
+    .site-header {
+        padding: 0;
+    }
+
+    .header-brand {
+        height: 64px;
+    }
+
+    .brand-logo {
+        font-size: 21px;
+    }
+
+    .main-nav {
+        height: auto;
+        min-height: 48px;
+        justify-content: flex-start;
+        gap: 24px;
+        padding: 0 16px;
+        overflow-x: auto;
+    }
+
+    .main-nav a {
+        font-size: 14px;
+    }
+}
+
 .mo {
     display: none;
 }
