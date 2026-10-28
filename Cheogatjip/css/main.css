@@ -394,20 +394,34 @@ body {
     z-index: 101;
     top: 100%;
     left: 50%;
-    display: none;
+    display: grid;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0);
     grid-template-columns: repeat(7, minmax(0, 1fr));
     width: 100vw;
     max-width: 100vw;
     padding: 18px max(24px, calc((100vw - 1200px) / 2)) 24px;
     box-sizing: border-box;
-    transform: translateX(-50%);
+    transform: translate(-50%, -14px);
+    transform-origin: top center;
     background: #f7f7f7;
     border-top: 1px solid #e5e5e5;
     box-shadow: 0 8px 14px rgba(0,0,0,.06);
+    transition:
+        opacity .3s ease,
+        transform .42s cubic-bezier(.22, 1, .36, 1),
+        clip-path .42s cubic-bezier(.22, 1, .36, 1),
+        visibility 0s linear .42s;
 }
-/* JavaScript에서 짧은 호버 딜레이 후 이 클래스를 켭니다. */
 .site-header.is-menu-open .mega-menu {
-    display: grid;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    clip-path: inset(0 0 0 0);
+    transform: translate(-50%, 0);
+    transition-delay: 0s;
 }
 .site-header .mega-menu-column {
     display: flex;
@@ -462,14 +476,16 @@ body {
         color: #111;
     }
     .site-header .mega-menu {
-        position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
         max-width: 100%;
         padding: 12px;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        transform: none;
+        transform: translateY(-14px);
+    }
+    .site-header.is-menu-open .mega-menu {
+        transform: translateY(0);
     }
     .site-header .mega-menu-column {
         min-height: auto;
