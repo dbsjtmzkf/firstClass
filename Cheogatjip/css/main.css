@@ -405,11 +405,8 @@ body {
     border-top: 1px solid #e5e5e5;
     box-shadow: 0 8px 14px rgba(0,0,0,.06);
 }
-/* 메뉴 위에 포인터가 있는 동안 패널을 유지 */
-.site-header .main-nav:hover + .mega-menu,
-.site-header .main-nav:focus-within + .mega-menu,
-.site-header .mega-menu:hover,
-.site-header .mega-menu:focus-within {
+/* JavaScript에서 짧은 호버 딜레이 후 이 클래스를 켭니다. */
+.site-header.is-menu-open .mega-menu {
     display: grid;
 }
 .site-header .mega-menu-column {
