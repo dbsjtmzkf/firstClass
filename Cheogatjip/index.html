@@ -285,7 +285,7 @@
                     item.setAttribute('aria-selected', String(active));
                 });
                 document.querySelectorAll('.menu-card').forEach((card) => {
-                    const categories = (card.dataset.categories || '').split(/\\s+/);
+                    const categories = (card.dataset.categories || '').split(/\s+/);
                     card.hidden = filter !== 'recommend' && !categories.includes(filter);
                 });
             });
