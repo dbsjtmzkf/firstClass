@@ -71,12 +71,67 @@
                 </div>
             </div>
             <section class="home-section menu-feature" aria-labelledby="menu-feature-title">
-                <div class="section-heading">
-                    <p class="section-eyebrow">CHEOGAJIP MENU</p>
-                    <h2 id="menu-feature-title">추천, 신메뉴, 인기메뉴</h2>
-                    <p>지금 처갓집에서 만나보세요</p>
+                <div class="section-heading menu-heading">
+                    <p class="section-eyebrow">BEST MENU</p>
+                    <h2 id="menu-feature-title">추천 메뉴</h2>
+                    <p>35년 고집으로 지켜온 처갓집의 대표 메뉴를 만나보세요</p>
                 </div>
-                <img class="section-image menu-feature-image" src="img/Screenshot%202026-10-14%20112213_edited%201.png" alt="처갓집 추천 메뉴와 신메뉴 안내">
+
+                <div class="menu-tabs" role="tablist" aria-label="메뉴 종류">
+                    <button class="menu-tab is-active" type="button" role="tab" aria-selected="true" data-filter="recommend">추천</button>
+                    <button class="menu-tab" type="button" role="tab" aria-selected="false" data-filter="new">신메뉴</button>
+                    <button class="menu-tab" type="button" role="tab" aria-selected="false" data-filter="seasoned">양념치킨</button>
+                    <button class="menu-tab" type="button" role="tab" aria-selected="false" data-filter="fried">후라이드</button>
+                    <button class="menu-tab" type="button" role="tab" aria-selected="false" data-filter="side">사이드</button>
+                </div>
+
+                <div class="menu-card-grid">
+                    <article class="menu-card" data-categories="recommend seasoned">
+                        <div class="menu-card-image">
+                            <img src="img/image%2033.png" alt="슈프림양념치킨" loading="lazy">
+                            <span class="menu-badge menu-badge-best">BEST</span>
+                        </div>
+                        <div class="menu-card-info">
+                            <h3>슈프림양념치킨</h3>
+                            <p class="menu-card-description">달콤한 양념과 부드러운 소스의 조화</p>
+                            <p class="menu-card-price">매장별 가격 확인</p>
+                        </div>
+                    </article>
+                    <article class="menu-card" data-categories="recommend new seasoned">
+                        <div class="menu-card-image">
+                            <img src="img/image%2034.png" alt="양념 소스 치킨" loading="lazy">
+                            <span class="menu-badge menu-badge-new">NEW</span>
+                        </div>
+                        <div class="menu-card-info">
+                            <h3>양념 소스 치킨</h3>
+                            <p class="menu-card-description">풍성한 소스로 완성한 인기 메뉴</p>
+                            <p class="menu-card-price">매장별 가격 확인</p>
+                        </div>
+                    </article>
+                    <article class="menu-card" data-categories="recommend fried">
+                        <div class="menu-card-image">
+                            <img src="img/thumb-1926160956_nRZEOJGp_615ce8c889ffa791d38572416244402b079e12c4_280x0%201.png" alt="후라이드 치킨" loading="lazy">
+                            <span class="menu-badge menu-badge-best">BEST</span>
+                        </div>
+                        <div class="menu-card-info">
+                            <h3>후라이드치킨</h3>
+                            <p class="menu-card-description">바삭하게 즐기는 담백한 치킨</p>
+                            <p class="menu-card-price">매장별 가격 확인</p>
+                        </div>
+                    </article>
+                    <article class="menu-card" data-categories="recommend new seasoned">
+                        <div class="menu-card-image">
+                            <img src="img/thumb-2944075207_iEoYJC2D_4ca15e36798c0af67c0f0a10ec836015492c7dd0_280x0%201.png" alt="매콤 양념치킨" loading="lazy">
+                            <span class="menu-badge menu-badge-new">NEW</span>
+                        </div>
+                        <div class="menu-card-info">
+                            <h3>매콤 양념치킨</h3>
+                            <p class="menu-card-description">매콤달콤한 양념의 깊은 풍미</p>
+                            <p class="menu-card-price">매장별 가격 확인</p>
+                        </div>
+                    </article>
+                </div>
+                <a class="menu-all-link" href="#menu-all">전체 메뉴 보기 <span aria-hidden="true">→</span></a>
             </section>
 
             <section class="home-section webzine-section" aria-labelledby="webzine-title">
@@ -218,6 +273,23 @@
                 }
             });
         }
+    </script>
+    <script>
+        // 추천 메뉴 탭 필터
+        document.querySelectorAll('.menu-tab').forEach((tab) => {
+            tab.addEventListener('click', () => {
+                const filter = tab.dataset.filter;
+                document.querySelectorAll('.menu-tab').forEach((item) => {
+                    const active = item === tab;
+                    item.classList.toggle('is-active', active);
+                    item.setAttribute('aria-selected', String(active));
+                });
+                document.querySelectorAll('.menu-card').forEach((card) => {
+                    const categories = (card.dataset.categories || '').split(/\\s+/);
+                    card.hidden = filter !== 'recommend' && !categories.includes(filter);
+                });
+            });
+        });
     </script>
 </body>
 </html>
