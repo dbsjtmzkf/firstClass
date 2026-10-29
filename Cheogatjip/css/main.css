@@ -1164,3 +1164,44 @@ body {
         font-size: 12px;
     }
 }
+
+
+/* Header utility links at the top-right */
+.site-header .header-inner {
+    position: relative;
+}
+.site-header .header-utility {
+    position: absolute;
+    top: 12px;
+    right: 0;
+    z-index: 102;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    color: #aaa;
+    font-size: 12px;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+.site-header .header-utility a {
+    color: #555;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+.site-header .header-utility a:hover {
+    color: #c9002b;
+}
+@media (max-width: 767px) {
+    .site-header .header-utility {
+        top: 8px;
+        right: 0;
+        gap: 5px;
+        font-size: 9px;
+    }
+    .site-header .header-utility a {
+        font-size: 9px;
+    }
+}
