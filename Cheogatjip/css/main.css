@@ -963,7 +963,7 @@ body {
         font-size: 14px;
     }
     .menu-card-description {
-        font-size: 11px;
+        font-size: 16.5px;
     }
     .menu-card-price {
         font-size: 12px;
@@ -1244,18 +1244,18 @@ body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 9px;
-    width: clamp(145px, 16%, 190px);
+    gap: 13.5px;
+    width: clamp(218px, 24%, 285px);
     transform: translateY(-50%);
 }
 .app-store-badge {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 15px;
     width: 100%;
-    min-height: 43px;
-    padding: 6px 15px;
+    min-height: 64.5px;
+    padding: 9px 22.5px;
     border: 1px solid #333;
     border-radius: 999px;
     background: #111;
@@ -1269,9 +1269,9 @@ body {
     transform: translateY(-2px);
 }
 .app-store-badge svg {
-    flex: 0 0 20px;
-    width: 20px;
-    height: 20px;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
 }
 .app-store-badge span:not(.apple-store-mark) {
     display: flex;
@@ -1282,48 +1282,48 @@ body {
 .app-store-badge small {
     margin-bottom: 2px;
     color: #f1f1f1;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 500;
     letter-spacing: .02em;
 }
 .app-store-badge strong {
     color: #fff;
-    font-size: 15px;
+    font-size: 22.5px;
     font-weight: 700;
     letter-spacing: -.03em;
 }
 .apple-store-mark {
     display: inline-flex;
-    flex: 0 0 20px;
+    flex: 0 0 30px;
     align-items: center;
     justify-content: center;
-    width: 20px;
-    height: 22px;
+    width: 30px;
+    height: 33px;
     color: #fff;
     font-family: Arial, sans-serif;
-    font-size: 22px;
+    font-size: 33px;
     font-weight: 800;
     line-height: 1;
 }
 @media (max-width: 767px) {
     .app-download-links {
         right: 3%;
-        gap: 5px;
-        width: clamp(112px, 25%, 145px);
+        gap: 7.5px;
+        width: clamp(168px, 37.5%, 218px);
     }
     .app-store-badge {
-        min-height: 34px;
-        gap: 6px;
-        padding: 4px 9px;
+        min-height: 51px;
+        gap: 9px;
+        padding: 6px 13.5px;
     }
     .app-store-badge svg,
     .apple-store-mark {
-        flex-basis: 16px;
-        width: 16px;
-        height: 16px;
+        flex-basis: 24px;
+        width: 24px;
+        height: 24px;
     }
     .app-store-badge small {
-        font-size: 6px;
+        font-size: 9px;
     }
     .app-store-badge strong {
         font-size: 11px;
