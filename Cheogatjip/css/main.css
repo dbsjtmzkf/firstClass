@@ -1329,3 +1329,93 @@ body {
         font-size: 10px;
     }
 }
+
+
+/* Brand webzine video slider controls */
+.webzine-slider {
+    position: relative;
+    width: min(100%, 1320px);
+    margin: 0 auto;
+    padding-bottom: 34px;
+}
+.webzine-slides {
+    width: 100%;
+}
+.webzine-slide {
+    display: none;
+}
+.webzine-slide.is-active {
+    display: grid;
+}
+.webzine-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid rgba(255,255,255,.7);
+    border-radius: 50%;
+    background: rgba(25,25,25,.72);
+    color: #fff;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background .2s ease, transform .2s ease;
+}
+.webzine-arrow:hover {
+    background: #c9002b;
+    transform: translateY(-50%) scale(1.06);
+}
+.webzine-prev {
+    right: 66px;
+}
+.webzine-next {
+    right: 14px;
+}
+.webzine-pagination {
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.webzine-pagination button {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #d4d0cc;
+    cursor: pointer;
+    transition: width .2s ease, border-radius .2s ease, background .2s ease;
+}
+.webzine-pagination button.is-active {
+    width: 22px;
+    border-radius: 999px;
+    background: #c9002b;
+}
+@media (max-width: 767px) {
+    .webzine-slider {
+        padding-bottom: 30px;
+    }
+    .webzine-arrow {
+        top: 31%;
+        width: 34px;
+        height: 34px;
+        font-size: 25px;
+    }
+    .webzine-prev {
+        right: 54px;
+    }
+    .webzine-next {
+        right: 12px;
+    }
+}
