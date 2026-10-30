@@ -149,22 +149,36 @@
                     <h2 id="webzine-title">브랜드 웹진</h2>
                     <p>처갓집의 이야기를 영상으로 만나보세요</p>
                 </div>
-                <div class="webzine-feature">
-                    <div class="webzine-copy">
-                        <p class="webzine-date">CHEOGAJIP × 떵개떵</p>
-                        <h3>떵개떵의 처갓집치킨 먹방</h3>
-                        <p class="webzine-description">먹방 크리에이터 떵개떵과 함께 처갓집치킨의 맛있는 순간을 만나보세요.</p>
-                        <a class="webzine-more" href="https://youtu.be/w4Tuzai8h3I?si=BDxX90KGmwgmEtRK" target="_blank" rel="noopener noreferrer">더보기 <span aria-hidden="true">→</span></a>
+                <div class="webzine-slider" data-webzine-slider>
+                    <div class="webzine-slides" aria-live="polite">
+                        <article class="webzine-feature webzine-slide is-active" data-title="떵개떵의 처갓집치킨 먹방" data-date="CHEOGAJIP × 떵개떵" data-description="먹방 크리에이터 떵개떵과 함께 처갓집치킨의 맛있는 순간을 만나보세요." data-video="w4Tuzai8h3I">
+                            <div class="webzine-copy">
+                                <p class="webzine-date">CHEOGAJIP × 떵개떵</p>
+                                <h3>떵개떵의 처갓집치킨 먹방</h3>
+                                <p class="webzine-description">먹방 크리에이터 떵개떵과 함께 처갓집치킨의 맛있는 순간을 만나보세요.</p>
+                                <a class="webzine-more" href="https://youtu.be/w4Tuzai8h3I?si=BDxX90KGmwgmEtRK" target="_blank" rel="noopener noreferrer">더보기 <span aria-hidden="true">→</span></a>
+                            </div>
+                            <div class="webzine-video">
+                                <iframe src="https://www.youtube-nocookie.com/embed/w4Tuzai8h3I?rel=0" title="떵개떵의 처갓집치킨 먹방" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                        </article>
+                        <article class="webzine-feature webzine-slide" data-title="처갓집 브랜드 영상" data-date="CHEOGAJIP VIDEO" data-description="두 번째 처갓집 영상을 감상해 보세요." data-video="xSBXgd39_5Q" aria-hidden="true">
+                            <div class="webzine-copy">
+                                <p class="webzine-date">CHEOGAJIP VIDEO</p>
+                                <h3>처갓집 브랜드 영상</h3>
+                                <p class="webzine-description">두 번째 처갓집 영상을 감상해 보세요.</p>
+                                <a class="webzine-more" href="https://youtu.be/xSBXgd39_5Q?si=LUJOkejOgGaFm2hS" target="_blank" rel="noopener noreferrer">더보기 <span aria-hidden="true">→</span></a>
+                            </div>
+                            <div class="webzine-video">
+                                <iframe src="https://www.youtube-nocookie.com/embed/xSBXgd39_5Q?rel=0" title="처갓집 브랜드 영상" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                        </article>
                     </div>
-                    <div class="webzine-video">
-                        <iframe
-                            src="https://www.youtube-nocookie.com/embed/w4Tuzai8h3I?rel=0"
-                            title="떵개떵의 처갓집치킨 먹방"
-                            loading="lazy"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
+                    <button class="webzine-arrow webzine-prev" type="button" aria-label="이전 영상"><span aria-hidden="true">‹</span></button>
+                    <button class="webzine-arrow webzine-next" type="button" aria-label="다음 영상"><span aria-hidden="true">›</span></button>
+                    <div class="webzine-pagination" aria-label="영상 선택">
+                        <button type="button" class="is-active" aria-label="첫 번째 영상으로 이동" aria-current="true"></button>
+                        <button type="button" aria-label="두 번째 영상으로 이동" aria-current="false"></button>
                     </div>
                 </div>
             </section>
@@ -335,5 +349,49 @@
             });
         });
     </script>
-</body>
+
+    <script>
+        // 브랜드 웹진 영상 슬라이드
+        (() => {
+            const slider = document.querySelector('[data-webzine-slider]');
+            if (!slider) return;
+            const slides = Array.from(slider.querySelectorAll('.webzine-slide'));
+            const dots = Array.from(slider.querySelectorAll('.webzine-pagination button'));
+            const showSlide = (nextIndex) => {
+                const index = (nextIndex + slides.length) % slides.length;
+                slides.forEach((slide, i) => {
+                    const active = i === index;
+                    slide.classList.toggle('is-active', active);
+                    slide.setAttribute('aria-hidden', String(!active));
+                    const frame = slide.querySelector('iframe');
+                    if (frame) {
+                        const videoId = slide.dataset.video;
+                        frame.src = active
+                            ? 'https://www.youtube-nocookie.com/embed/' + videoId + '?rel=0'
+                            : 'about:blank';
+                    }
+                });
+                dots.forEach((dot, i) => {
+                    const active = i === index;
+                    dot.classList.toggle('is-active', active);
+                    dot.setAttribute('aria-current', String(active));
+                });
+            };
+            let current = 0;
+            slider.querySelector('.webzine-prev').addEventListener('click', () => {
+                current = (current - 1 + slides.length) % slides.length;
+                showSlide(current);
+            });
+            slider.querySelector('.webzine-next').addEventListener('click', () => {
+                current = (current + 1) % slides.length;
+                showSlide(current);
+            });
+            dots.forEach((dot, i) => dot.addEventListener('click', () => {
+                current = i;
+                showSlide(current);
+            }));
+            showSlide(current);
+        })();
+    </script>
+\n</body>
 </html>
