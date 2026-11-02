@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,409 +7,280 @@
     <link rel="stylesheet" href="../font/css/bkbulmatpro.css">
     <link rel="stylesheet" href="../font/css/sdgothic.css">
     <link rel="stylesheet" href="../css/default.css">
-    <title>버거킹 | 로그인</title>
+    <title>버거킹</title>
     <style>
-        :root {
-            --bk-orange: #f36b21;
-            --bk-orange-dark: #d94f0d;
-            --bk-ink: #211b18;
-            --bk-muted: #81766f;
-            --bk-line: #e8dfd8;
-            --bk-cream: #fff8f1;
-            --bk-white: #fff;
-            --font: "Pretendard Variable", sans-serif;
-        }
-        * { box-sizing: border-box; }
-        html { font-size: 62.5%; }
-        body {
-            margin: 0;
-            min-width: 320px;
-            min-height: 100vh;
-            color: var(--bk-ink);
-            background:
-                radial-gradient(ellipse at 10% 0%, rgba(243,107,33,.13), transparent 38%),
-                linear-gradient(135deg, #fffaf5 0%, #f7eee5 100%);
+       @font-face {
+        font-family: "Pretendard Variable";
+        src: url("../font/PretendardVariable.woff2") format("woff2");
+        font-weight: 100 900;
+        font-style: normal;
+       }
+
+       @font-face {
+        font-family: "BKR";
+        src: url("../font/BKBulMatPro-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+       }
+
+       @font-face {
+        font-family: "Sandoll GothicNeoRound";
+        src: url("../font/SDGothicNeoRound-eMd.woff") format("woff");
+        font-weight: 500;
+        font-style: normal;
+       }
+
+       @font-face {
+        font-family: "Sandoll GothicNeoRound";
+        src: url("../font/SDGothicNeoRound-gBd.woff") format("woff");
+        font-weight: 700;
+        font-style: normal;
+       }
+
+       @font-face {
+        font-family: "Sandoll GothicNeoRound";
+        src: url("../font/SDGothicNeoRound-hEb.woff") format("woff");
+        font-weight: 800;
+        font-style: normal;
+       }
+
+       :root {
+            --font: "Sandoll GothicNeoRound", sans-serif;
+            --font-pre: "Pretendard Variable", sans-serif;
+            --font-BKR: "BKR", sans-serif;
+            --primary:#502314;
+            --disabledBg:#DCCDBE;
+            --focus:#D62302;
+            --baseBorder:#D8CBC0;
+            --baseBg:#FFFDFB;
+            --button:#E9DDCD;
+            --errorColor:#C54734;
+            --placeholder:#A99A90;
+            --text:#6F5B50;
+            --bg:#F5EBDD;
+            --inputBg:#FFFDFB;
+       }
+       html { font-size: 62.5%; }
+       body {
             font-family: var(--font);
+            font-weight: 300;
             font-size: 1.6rem;
-        }
-        a { color: inherit; text-decoration: none; }
-        button, input { font: inherit; }
-        #wrap {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            max-width: 1100px;
-            min-height: 100vh;
-            margin: 0 auto;
-            padding: 28px clamp(20px, 5vw, 64px) 24px;
-        }
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            min-height: 48px;
-        }
-        .brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 11px;
-            color: var(--bk-ink);
-            font-family: "BKR", var(--font), sans-serif;
-            font-size: 2.2rem;
-            letter-spacing: -.04em;
-        }
-        .brand-mark {
-            display: grid;
-            place-items: center;
-            width: 38px;
-            height: 38px;
-            border: 3px solid var(--bk-orange);
-            border-radius: 50%;
-            color: var(--bk-orange-dark);
-            font-family: var(--font);
-            font-size: 1.5rem;
-            font-weight: 900;
-        }
-        .header-help {
-            color: #675b53;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-        main {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(360px, 440px);
-            align-items: center;
-            gap: clamp(35px, 7vw, 90px);
-            flex: 1;
-            padding: 58px 0 72px;
-        }
-        .welcome {
-            max-width: 490px;
-            padding-bottom: 20px;
-        }
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin: 0 0 22px;
-            color: var(--bk-orange-dark);
-            font-size: 1.2rem;
-            font-weight: 800;
-            letter-spacing: .16em;
-        }
-        .eyebrow::before {
-            content: "";
-            width: 24px;
-            height: 2px;
-            background: var(--bk-orange);
-        }
-        .welcome h2 {
-            margin: 0;
-            font-family: "BKR", var(--font), sans-serif;
-            font-size: clamp(4rem, 5.4vw, 6.8rem);
-            line-height: 1.08;
-            letter-spacing: -.045em;
-        }
-        .welcome h2 em {
-            color: var(--bk-orange);
-            font-style: normal;
-        }
-        .welcome-copy {
-            max-width: 350px;
-            margin: 22px 0 0;
-            color: var(--bk-muted);
-            font-size: 1.6rem;
-            line-height: 1.8;
-        }
-        .welcome-stamp {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 38px;
-            padding: 11px 16px;
-            border: 1px solid #ead7c7;
-            border-radius: 999px;
-            background: rgba(255,255,255,.62);
-            color: #6b5142;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-        .welcome-stamp span {
-            color: var(--bk-orange);
-            font-size: 1.7rem;
-        }
-        .login-card {
-            width: 100%;
-            padding: clamp(26px, 4vw, 42px);
-            border: 1px solid rgba(100,65,40,.08);
-            border-radius: 24px;
-            background: var(--bk-white);
-            box-shadow: 0 22px 60px rgba(77,46,25,.10);
-        }
-        .login-card h1 {
-            margin: 0 0 9px;
-            font-size: 2.8rem;
-            font-weight: 850;
-            letter-spacing: -.04em;
-        }
-        .card-subtitle {
-            margin: 0 0 28px;
-            color: var(--bk-muted);
-            font-size: 1.4rem;
-        }
-        .field + .field { margin-top: 15px; }
-        .field label {
-            display: block;
-            margin-bottom: 8px;
-            color: #51453e;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-        .field input {
-            width: 100%;
-            height: 52px;
-            padding: 0 15px;
-            border: 1px solid var(--bk-line);
-            border-radius: 12px;
-            outline: none;
-            background: #fffdfb;
-            color: var(--bk-ink);
-            font-size: 1.5rem;
-            transition: border-color .2s, box-shadow .2s;
-        }
-        .field input::placeholder { color: #b4a79e; }
-        .field input:focus {
-            border-color: var(--bk-orange);
-            box-shadow: 0 0 0 3px rgba(243,107,33,.13);
-        }
-        .password-wrap { position: relative; }
-        .password-wrap input { padding-right: 62px; }
-        .password-toggle {
-            position: absolute;
-            top: 50%;
-            right: 12px;
-            padding: 6px 8px;
-            border: 0;
-            border-radius: 7px;
-            background: transparent;
-            color: var(--bk-orange-dark);
-            font-size: 1.2rem;
-            font-weight: 700;
-            cursor: pointer;
-            transform: translateY(-50%);
-        }
-        .login-options {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin: 15px 0 22px;
-            color: #74675f;
-            font-size: 1.2rem;
-        }
-        .check-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            cursor: pointer;
-        }
-        .check-label input {
-            width: 16px;
-            height: 16px;
-            accent-color: var(--bk-orange);
-        }
-        .login-submit {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 52px;
-            border: 0;
-            border-radius: 12px;
-            background: var(--bk-orange);
-            color: #fff;
-            font-size: 1.6rem;
-            font-weight: 800;
-            cursor: pointer;
-            box-shadow: 0 8px 18px rgba(243,107,33,.22);
-            transition: background .2s, transform .2s;
-        }
-        .login-submit:hover {
-            background: var(--bk-orange-dark);
-            transform: translateY(-1px);
-        }
-        .account-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0;
-            margin-top: 20px;
-            color: #766960;
-            font-size: 1.2rem;
-        }
-        .account-links a { padding: 0 10px; }
-        .account-links a + a { border-left: 1px solid #ded4cc; }
-        .signup-callout {
-            display: flex;
-            justify-content: center;
-            gap: 5px;
-            margin: 27px 0 0;
-            padding-top: 22px;
-            border-top: 1px solid #f0e9e3;
-            color: #83766d;
-            font-size: 1.3rem;
-        }
-        .signup-callout a {
-            color: var(--bk-orange-dark);
-            font-weight: 800;
-        }
-        .sns-login { margin-top: 28px; }
-        .sns-title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin: 0 0 17px;
-            color: #a09389;
-            font-size: 1.1rem;
-            white-space: nowrap;
-        }
-        .sns-title::before, .sns-title::after {
-            content: "";
-            height: 1px;
-            flex: 1;
-            background: #eee6df;
-        }
-        .sns-list {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-        .sns-list a {
-            display: grid;
-            place-items: center;
-            width: 42px;
-            height: 42px;
-            border: 1px solid #eee6df;
-            border-radius: 50%;
-            background: #fff;
-            font-size: 1.2rem;
-            font-weight: 900;
-            transition: transform .2s, border-color .2s;
-        }
-        .sns-list a:hover {
-            transform: translateY(-2px);
-            border-color: var(--bk-orange);
-        }
-        .sns-kakao { background: #fee500 !important; border-color: #fee500 !important; color: #191600; }
-        .sns-naver { background: #03c75a !important; border-color: #03c75a !important; color: #fff; }
-        .sns-apple { background: #211b18 !important; border-color: #211b18 !important; color: #fff; }
-        footer {
-            display: flex;
-            justify-content: space-between;
-            gap: 16px;
-            padding-top: 18px;
-            border-top: 1px solid rgba(100,65,40,.12);
-            color: #9a8d83;
-            font-size: 1.1rem;
-        }
-        footer nav { display: flex; flex-wrap: wrap; gap: 18px; }
-        @media (max-width: 800px) {
-            #wrap { padding: 20px 20px 18px; }
-            main {
-                grid-template-columns: 1fr;
-                gap: 28px;
-                max-width: 480px;
-                margin: 0 auto;
-                padding: 38px 0 48px;
-            }
-            .welcome { padding-bottom: 0; }
-            .welcome h2 { font-size: clamp(3.8rem, 9vw, 5.2rem); }
-            .welcome-copy { margin-top: 14px; font-size: 1.4rem; }
-            .welcome-stamp { margin-top: 20px; }
-            .login-card { padding: 28px 22px; }
-            footer { flex-direction: column; }
-        }
-        @media (max-width: 420px) {
-            .header-help { font-size: 1.2rem; }
-            .login-options { gap: 10px; }
-            .account-links a { padding: 0 7px; }
-        }
+       }
+       a { color: inherit; }
+       #wrap {
+        width: 100%;
+        max-width: 1024px;
+        min-width: 360px;
+        min-height: 100dvb;
+        margin: 0 auto;
+        background-color: var(--bg);
+       }
+       header {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 58px;
+       }
+       .prev_btn {
+        position: absolute;
+        left: 0;
+        width: 48px;
+        height: 48px;
+        background: url(img/back_icon.svg) no-repeat scroll center / auto;
+       }
+       h1 { font-size: 2.0rem; }
+       main { padding: 35px 20px 90px; }
+       .title {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 50px;
+        font-family: var(--font-BKR);
+       }
+       .title span:first-child {
+        font-size: 2.5rem;
+        line-height: 1;
+       }
+       .title > span:last-child {
+        font-size: 3.5rem;
+        line-height: 1;
+       }
+
+       .input_box + .input_box {
+        margin-top: 10px;
+       }
+       input {
+        border: 1px solid var(--baseBorder);
+        background-color: var(--inputBg);
+       }
+       input::placeholder { color: var(--placeholder); }
+       .email { font-size: 1.5rem; line-height: 1; }
+       input[type="email"],
+       input[type="password"] {
+        width: 100%;
+        height: 50px;
+        padding: 0 20px;
+        border-radius: 10px;
+       }
+       .input_box.rela { position: relative; }
+       .pw_btn {
+        position: absolute;
+        right: 20px;
+        bottom: 12px;
+        width: 26px;
+        height: 26px;
+        background: url(img/eye_icon.svg) no-repeat center/26px;
+       }
+       .login_option {
+        margin-top: 8px;
+       }
+
+       .login_option label { display: inline-flex; }
+       .login_option label:first-child { margin-right: 30px; }
+       .login_option span {
+        display: inline-flex;
+        align-items: center;
+        column-gap: 6px;
+       }
+       .login_option .check + span::before {
+        content: "";
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background: url(img/state=disabled.svg) no-repeat center / contain;
+       }
+       .login_option .check:checked + span::before {
+        content: "";
+        background-image: url(img/state=Activefs.svg);
+       }
+       .login_btn {
+        width: 100%;
+        height: 44px;
+        border-radius: 22px;
+        font-family: inherit;
+        font-size: inherit;
+        color: var(--text);
+        background-color: var(--disabledBg);
+        border: none;
+        opacity: 1;
+       }
+       a { text-decoration: none; }
+       .login_link {
+        margin-top: 20px;
+        font-family: var(--font-pre);
+        font-weight: 500;
+        font-size: 1.4rem;
+        text-align: center;
+       }
+       .login_link a {
+        display: inline-flex;
+        align-items: center;
+        columns-gap: 4px;
+       }
+       .login_link a::after {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 12px;
+        background-color: var(--primary);
+        opacity: 1;
+       }
+       .login_link a:last-child::after { content: ""; display: none; }
+       .sns_login { margin-top: 96px; }
+       .sns_login > p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 12px;
+        margin-bottom: 35px;
+        font-size: 1.3rem;
+        color: var(--text);
+        white-space: nowrap;
+       }
+       .sns_login > p::before,
+       .sns_login > p::after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 1px;
+        background-color: var(--primary);
+        opacity: 0.3;
+       }
+       .sns_list {
+        display: flex;
+        justify-content: center;
+        column-gap: 20px;
+       }
+       .sns_list > a {
+        display: block;
+        width: 45px;
+        height: 45px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 45px;
+       }
+       .sns_list > a:first-child { background-image: url(img/kakao.svg); }
+       .sns_list > a:nth-child(2) { background-image: url(img/naver.svg); }
+       .sns_list > a:nth-child(3) { background-image: url(img/apple.svg); }
+       .sns_list > a:last-child { background-image: url(img/삼성카드.svg); }
     </style>
 </head>
 <body>
     <div id="wrap">
         <header>
-            <a class="brand" href="#" aria-label="버거킹 홈">
-                <span class="brand-mark" aria-hidden="true">BK</span>
-                <span>BURGER KING</span>
-            </a>
-            <a class="header-help" href="#">로그인 도움말</a>
+            <h1>로그인</h1>
+            <button class="prev_btn"><span class="sr-only">이전버튼</span></button>
         </header>
         <main>
-            <section class="welcome" aria-label="로그인 안내">
-                <p class="eyebrow">BURGER KING MEMBERS</p>
-                <h2>오늘도<br><em>맛있게</em><br>로그인하세요.</h2>
-                <p class="welcome-copy">버거킹 멤버십 혜택과 나만의 쿠폰을 확인하고, 더 즐거운 버거킹을 만나보세요.</p>
-                <div class="welcome-stamp"><span aria-hidden="true">★</span> 멤버십 전용 혜택을 확인하세요</div>
-            </section>
-            <section class="login-card" aria-labelledby="login-title">
-                <h1 id="login-title">로그인</h1>
-                <p class="card-subtitle">계정 정보를 입력해 주세요.</p>
-                <form action="">
-                    <fieldset>
-                        <legend class="sr-only">버거킹 로그인</legend>
-                        <div class="field">
-                            <label for="email">아이디 (이메일)</label>
-                            <input type="email" id="email" name="email" autocomplete="username" placeholder="이메일 주소를 입력해 주세요." required>
-                        </div>
-                        <div class="field">
-                            <label for="password">비밀번호</label>
-                            <div class="password-wrap">
-                                <input type="password" id="password" name="password" autocomplete="current-password" placeholder="비밀번호를 입력해 주세요." required>
-                                <button type="button" class="password-toggle" aria-controls="password" aria-pressed="false">보기</button>
-                            </div>
-                        </div>
-                        <div class="login-options">
-                            <label class="check-label"><input type="checkbox" name="auto-login"> 자동 로그인</label>
-                            <label class="check-label"><input type="checkbox" name="save-id"> 아이디 저장</label>
-                        </div>
-                        <button type="submit" class="login-submit">로그인</button>
-                    </fieldset>
-                </form>
-                <div class="account-links">
-                    <a href="#">아이디 찾기</a>
-                    <a href="password.html">비밀번호 재설정</a>
-                    <a href="#">회원가입</a>
-                </div>
-                <div class="signup-callout"><span>아직 회원이 아니신가요?</span><a href="#">회원가입</a></div>
-                <div class="sns-login">
-                    <p class="sns-title">SNS 계정으로 간편 로그인</p>
-                    <div class="sns-list">
-                        <a class="sns-kakao" href="#" aria-label="카카오 로그인">K</a>
-                        <a class="sns-naver" href="#" aria-label="네이버 로그인">N</a>
-                        <a class="sns-apple" href="#" aria-label="애플 로그인">A</a>
+            <h2 class="title">
+                <span>안녕하세요:)</span>
+                <span>버거킹입니다.</span>
+            </h2>
+            <form action="">
+                <fieldset>
+                    <legend class="sr-only">로그인화면</legend>
+                    <label for="email">이메일 로그인</label>
+                    <div class="input_box">
+                        <input type="email" id="email" name="email"
+                        placeholder="아이디(이메일)을 입력해 주세요.">
                     </div>
+                    <div class="input_box rela">
+                        <input type="password" name="password"
+                        placeholder="비밀번호를 입력해 주세요">
+                        <button type="button" class="pw_btn">
+                            <span class="sr-only">비밀번호 보기</span>
+                        </button>
+                    </div>
+                    <div class="login_option">
+                        <label>
+                            <input type="checkbox"
+                            class="check sr-only" checked>
+                            <span>자동 로그인</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" class="check sr-only">
+                            <span>아이디 저장</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="login_btn">로그인</button>
+                </fieldset>
+            </form>
+            <div class="login_link">
+                <a href="#">아이디 찾기</a>
+                <a href="password.html">비밀번호 재설정</a>
+                <a href="#">회원가입</a>
+            </div>
+            <div class="sns_login">
+                <p>SNS으로 건편하게 로그인</p>
+                <div class="sns_list">
+                    <a href="#"><span class="sr-only">카카오로그인</span></a>
+                    <a href="#"><span class="sr-only">네이버로그인</span></a>
+                    <a href="#"><span class="sr-only">애플로그인</span></a>
+                    <a href="#"><span class="sr-only">삼성카드로그인</span></a>
                 </div>
-            </section>
+            </div>
         </main>
-        <footer>
-            <span>© BURGER KING. All rights reserved.</span>
-            <nav aria-label="푸터 메뉴">
-                <a href="#">이용약관</a>
-                <a href="#">개인정보처리방침</a>
-                <a href="#">고객센터</a>
-            </nav>
-        </footer>
     </div>
-    <script>
-        const passwordInput = document.querySelector('#password');
-        const passwordToggle = document.querySelector('.password-toggle');
-        passwordToggle.addEventListener('click', () => {
-            const isVisible = passwordInput.type === 'text';
-            passwordInput.type = isVisible ? 'password' : 'text';
-            passwordToggle.textContent = isVisible ? '보기' : '숨기기';
-            passwordToggle.setAttribute('aria-pressed', String(!isVisible));
-        });
-    </script>
 </body>
 </html>
