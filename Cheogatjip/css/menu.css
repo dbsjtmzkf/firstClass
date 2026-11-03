@@ -1,0 +1,38 @@
+/* MENU subpage — extends the existing main-page design system */
+.menu-page{color:#222;font-family:"Pretendard Variable",Pretendard,sans-serif}
+.menu-page-hero{background:#f7f7f7;border-top:1px solid #eee;border-bottom:1px solid #eee;text-align:center;padding:54px 24px 30px}
+.menu-page-hero-inner{width:min(100%,1100px);margin:0 auto}
+.menu-page-hero .section-eyebrow{margin-bottom:10px}
+.menu-page-hero h1{margin:0 0 12px;font-size:clamp(30px,3vw,44px);font-weight:800;line-height:1.2}
+.menu-page-hero p:not(.section-eyebrow){margin:0;color:#777;font-size:17px;line-height:1.6}
+.breadcrumb{display:flex;justify-content:center;gap:12px;margin-top:24px;color:#999;font-size:12px;letter-spacing:.04em}
+.breadcrumb a{color:#777;text-decoration:none}.breadcrumb a:hover{color:#c9002b}
+.menu-catalog{padding-top:72px}
+.menu-catalog .section-heading{margin-bottom:30px}
+.menu-catalog .section-heading h2{font-size:clamp(30px,3vw,40px)}
+.menu-catalog .menu-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:0 auto 30px}
+.menu-catalog .menu-tab{min-width:104px;padding:12px 24px;border:1px solid #e1e1e1;border-radius:999px;background:#fff;color:#555;font:600 14px "Pretendard Variable",Pretendard,sans-serif;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.menu-catalog .menu-tab:hover,.menu-catalog .menu-tab.is-active{border-color:#e10b20;background:#e10b20;color:#fff}
+.menu-catalog .menu-tab:focus-visible{outline:2px solid #d71920;outline-offset:3px}
+.menu-result-bar{display:flex;align-items:center;justify-content:space-between;width:min(100%,1210px);margin:0 auto 16px;padding-bottom:12px;border-bottom:1px solid #e5e5e5;text-align:left}
+.menu-result-bar p{margin:0;color:#777;font-size:13px}.menu-result-bar strong{color:#222;font-size:15px}
+.menu-result-note{font-size:12px!important}
+.menu-catalog-grid{width:min(100%,1210px);margin:0 auto;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px 16px;text-align:left}
+.menu-catalog-grid .menu-card{min-width:0}
+.menu-catalog-grid .menu-card-info{padding:14px 2px 0}
+.menu-catalog-grid .menu-card h3{margin:0 0 7px;color:#222;font-size:17px;font-weight:800;line-height:1.4}
+.menu-catalog-grid .menu-card-description{min-height:39px;margin:0 0 10px;color:#777;font-size:13px;line-height:1.5}
+.menu-catalog-grid .menu-card-price{margin:0;color:#222;font-size:14px;font-weight:800}
+.menu-catalog-grid .menu-card-image{position:relative;overflow:hidden;aspect-ratio:1/1;border-radius:12px;background:#f5f3f1}
+.menu-catalog-grid .menu-card-image img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.menu-catalog-grid .menu-card:hover .menu-card-image img{transform:scale(1.035)}
+.menu-catalog-grid .menu-badge{position:absolute;top:12px;left:12px;padding:6px 10px;border-radius:3px;color:#fff;font-size:11px;font-weight:800;letter-spacing:.04em}
+.menu-catalog-grid .menu-badge-best{background:#e10b20}.menu-catalog-grid .menu-badge-new{background:#171717}
+.image-placeholder{display:flex;width:100%;height:100%;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:#f5f3f1;color:#999;font-size:13px;text-align:center}
+.image-placeholder .placeholder-icon{display:grid;place-items:center;width:36px;height:36px;border:1px dashed #c9c3be;border-radius:50%;font-size:22px;color:#b4aaa3}
+.image-placeholder small{font-size:11px;color:#aaa}
+.menu-disclaimer{width:min(100%,1210px);margin:34px auto 0;color:#999;font-size:12px;line-height:1.7;text-align:left}
+.menu-catalog-grid .menu-card[hidden]{display:none!important}
+@media(max-width:900px){.menu-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 16px}}
+@media(max-width:767px){.menu-page-hero{padding:36px 16px 24px}.menu-page-hero p:not(.section-eyebrow){font-size:15px}.menu-catalog{padding-top:48px}.menu-catalog .menu-tabs{gap:7px;margin-bottom:24px}.menu-catalog .menu-tab{min-width:0;padding:10px 17px;font-size:13px}.menu-result-bar{align-items:flex-start;gap:8px}.menu-result-note{max-width:58%;text-align:right;line-height:1.5}.menu-catalog-grid{gap:24px 12px}.menu-catalog-grid .menu-card-info{padding-top:10px}.menu-catalog-grid .menu-card h3{font-size:14px}.menu-catalog-grid .menu-card-description{font-size:12px;min-height:36px}.menu-catalog-grid .menu-card-price{font-size:12px}.menu-catalog-grid .menu-badge{top:8px;left:8px;padding:5px 8px;font-size:10px}.menu-disclaimer{margin-top:26px}}
+@media(max-width:480px){.menu-catalog .menu-tabs{gap:6px}.menu-catalog .menu-tab{padding:9px 12px;font-size:12px}.menu-catalog-grid{gap:22px 10px}.menu-catalog-grid .menu-card-description{min-height:0}.menu-page-hero h1{font-size:28px}}
