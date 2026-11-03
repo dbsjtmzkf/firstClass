@@ -18,7 +18,7 @@
    <div class="nav-item"><a href="menu.html" aria-current="page">메뉴안내</a></div><div class="nav-item"><a href="#growth">동반성장</a></div><div class="nav-item"><a href="#character">처돌이야</a></div><div class="nav-item"><a href="#store">매장안내</a></div><div class="nav-item"><a href="#global">해외매장</a></div><div class="nav-item"><a href="#news">처갓집소식</a></div><div class="nav-item nav-item-cta"><a href="#franchise">창업안내</a></div>
   </nav>
   <div class="mega-menu" aria-label="하위 메뉴">
-   <div class="mega-menu-column"><a href="menu.html">전체메뉴</a><a href="menu.html#menu-list">신메뉴</a><a href="menu.html#menu-list">치킨</a><a href="menu.html#menu-list">사이드</a><a href="menu.html#menu-list">주류</a></div>
+   <div class="mega-menu-column"><a href="menu.html">전체메뉴</a><a href="menu.html#new">신메뉴</a><a href="menu.html#chicken">치킨</a><a href="menu.html#side">사이드</a><a href="menu.html#drink">주류</a></div>
    <div class="mega-menu-column"><a href="#growth">처갓집 소개</a><a href="#growth">상생이야기</a></div><div class="mega-menu-column"><a href="#character">활동 소개</a></div><div class="mega-menu-column"><a href="#store">매장찾기</a></div><div class="mega-menu-column"><a href="#global">해외 매장정보</a></div><div class="mega-menu-column"><a href="#news">이벤트</a><a href="#news">브랜드 웹진</a></div><div class="mega-menu-column"><a href="#franchise">창업 문의</a></div>
   </div>
  </div>
@@ -30,14 +30,14 @@
  <section class="menu-catalog home-section" id="menu-list" aria-labelledby="catalog-title">
   <div class="section-heading menu-heading"><p class="section-eyebrow">OUR MENU</p><h2 id="catalog-title">다 맛있는 처갓집</h2><p>정성으로 완성한 처갓집의 메뉴를 만나보세요.</p></div>
   <div class="menu-tabs" role="tablist" aria-label="메뉴 카테고리">
-   <button class="menu-tab is-active" role="tab" aria-selected="true" type="button" data-filter="all">전체메뉴</button>
-   <button class="menu-tab" role="tab" aria-selected="false" type="button" data-filter="new">신메뉴</button>
-   <button class="menu-tab" role="tab" aria-selected="false" type="button" data-filter="chicken">치킨</button>
-   <button class="menu-tab" role="tab" aria-selected="false" type="button" data-filter="side">사이드</button>
-   <button class="menu-tab" role="tab" aria-selected="false" type="button" data-filter="drink">주류</button>
+   <button class="menu-tab is-active" id="tab-all" role="tab" aria-selected="true" aria-controls="menu-grid" type="button" data-filter="all">전체메뉴</button>
+   <button class="menu-tab" id="tab-new" role="tab" aria-selected="false" aria-controls="menu-grid" type="button" data-filter="new">신메뉴</button>
+   <button class="menu-tab" id="tab-chicken" role="tab" aria-selected="false" aria-controls="menu-grid" type="button" data-filter="chicken">치킨</button>
+   <button class="menu-tab" id="tab-side" role="tab" aria-selected="false" aria-controls="menu-grid" type="button" data-filter="side">사이드</button>
+   <button class="menu-tab" id="tab-drink" role="tab" aria-selected="false" aria-controls="menu-grid" type="button" data-filter="drink">주류</button>
   </div>
   <div class="menu-result-bar"><p><strong id="menu-count">8</strong>개의 메뉴</p><p class="menu-result-note">메뉴 이미지는 추후 교체할 수 있도록 준비했습니다.</p></div>
-  <div class="menu-card-grid menu-catalog-grid" id="menu-grid">
+  <div class="menu-card-grid menu-catalog-grid" id="menu-grid" role="tabpanel" aria-labelledby="tab-all">
    <article class="menu-card" data-categories="chicken"><div class="menu-card-image"><img src="img/image%2033.png" alt="슈프림양념치킨 블랙라벨" loading="lazy"><span class="menu-badge menu-badge-best">BEST</span></div><div class="menu-card-info"><h3>슈프림양념치킨 블랙라벨</h3><p class="menu-card-description">달콤한 양념과 부드러운 소스의 조화</p><p class="menu-card-price">19,000원 + 추가금</p></div></article>
    <article class="menu-card" data-categories="new chicken"><div class="menu-card-image"><img src="img/image%2034.png" alt="슈프림 양념치킨" loading="lazy"><span class="menu-badge menu-badge-new">NEW</span></div><div class="menu-card-info"><h3>슈프림 양념치킨</h3><p class="menu-card-description">풍성한 소스로 완성한 인기 메뉴</p><p class="menu-card-price">19,000원 + 추가금</p></div></article>
    <article class="menu-card" data-categories="new chicken"><div class="menu-card-image"><img src="img/thumb-1926160956_nRZEOJGp_615ce8c889ffa791d38572416244402b079e12c4_280x0%201.png" alt="K-마라 양념치킨" loading="lazy"><span class="menu-badge menu-badge-new">NEW</span></div><div class="menu-card-info"><h3>K-마라 양념치킨</h3><p class="menu-card-description">매콤한 마라 풍미를 더한 치킨</p><p class="menu-card-price">19,000원 + 추가금</p></div></article>
