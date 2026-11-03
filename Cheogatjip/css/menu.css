@@ -36,3 +36,10 @@
 @media(max-width:900px){.menu-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 16px}}
 @media(max-width:767px){.menu-page-hero{padding:36px 16px 24px}.menu-page-hero p:not(.section-eyebrow){font-size:15px}.menu-catalog{padding-top:48px}.menu-catalog .menu-tabs{gap:7px;margin-bottom:24px}.menu-catalog .menu-tab{min-width:0;padding:10px 17px;font-size:13px}.menu-result-bar{align-items:flex-start;gap:8px}.menu-result-note{max-width:58%;text-align:right;line-height:1.5}.menu-catalog-grid{gap:24px 12px}.menu-catalog-grid .menu-card-info{padding-top:10px}.menu-catalog-grid .menu-card h3{font-size:14px}.menu-catalog-grid .menu-card-description{font-size:12px;min-height:36px}.menu-catalog-grid .menu-card-price{font-size:12px}.menu-catalog-grid .menu-badge{top:8px;left:8px;padding:5px 8px;font-size:10px}.menu-disclaimer{margin-top:26px}}
 @media(max-width:480px){.menu-catalog .menu-tabs{gap:6px}.menu-catalog .menu-tab{padding:9px 12px;font-size:12px}.menu-catalog-grid{gap:22px 10px}.menu-catalog-grid .menu-card-description{min-height:0}.menu-page-hero h1{font-size:28px}}
+
+/* Keyboard and motion preferences */
+.menu-catalog .menu-tab[aria-selected="true"]{font-weight:700}
+.menu-catalog-grid .menu-card:focus-within{outline:2px solid #d71920;outline-offset:4px}
+@media(prefers-reduced-motion:reduce){
+ .menu-catalog .menu-tab,.menu-catalog-grid .menu-card-image img{transition:none}
+}
