@@ -3,6 +3,11 @@
  const cards=[...document.querySelectorAll('#menu-grid .menu-card')];
  const count=document.getElementById('menu-count');
  const grid=document.getElementById('menu-grid');
+ cards.forEach(card=>{
+  const open=()=>{location.href='menu-detail.html?item='+encodeURIComponent(card.dataset.menuId||'supreme');};
+  card.addEventListener('click',open);
+  card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();open();}});
+ });
  const categories=new Set(tabs.map(tab=>tab.dataset.filter));
  function categoryFromHash(){
   const key=decodeURIComponent(location.hash.slice(1)).toLowerCase();
