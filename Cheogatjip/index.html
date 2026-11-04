@@ -491,36 +491,7 @@
         })();
     </script>
 \n    <script>
-        // Newsletter board category/search controls
-        (() => {
-            const board = document.querySelector('.newsletter-board');
-            if (!board) return;
-            const cards = Array.from(board.querySelectorAll('.newsletter-article'));
-            const buttons = Array.from(board.querySelectorAll('[data-news-category]'));
-            const search = board.querySelector('.newsletter-search');
-            const input = board.querySelector('#newsletter-keyword');
-            const empty = board.querySelector('#newsletter-empty');
-            let category = 'all';
-            const filter = () => {
-                const q = input.value.trim().toLowerCase();
-                let visible = 0;
-                cards.forEach(card => {
-                    const matchesCategory = category === 'all' || card.dataset.category === category;
-                    const matchesText = !q || card.textContent.toLowerCase().includes(q);
-                    const show = matchesCategory && matchesText;
-                    card.hidden = !show;
-                    if (show) visible++;
-                });
-                empty.hidden = visible > 0;
-            };
-            buttons.forEach(button => button.addEventListener('click', () => {
-                category = button.dataset.newsCategory;
-                buttons.forEach(item => item.classList.toggle('is-active', item === button));
-                filter();
-            }));
-            search.addEventListener('submit', event => { event.preventDefault(); filter(); });
-            input.addEventListener('input', filter);
-        })();
+        // Newsletter 카드들은 공식 뉴스룸으로 연결되는 정적 카드입니다.
     </script>
 </body>
 </html>
