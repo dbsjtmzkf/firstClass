@@ -43,3 +43,29 @@
 @media(prefers-reduced-motion:reduce){
  .menu-catalog .menu-tab,.menu-catalog-grid .menu-card-image img{transition:none}
 }
+
+
+
+/* Content typography floor: 16px minimum; tiny utility labels remain compact. */
+.menu-page main p:not(.section-eyebrow):not(.menu-disclaimer):not(.menu-result-note),
+.menu-page main li,
+.menu-page main button,
+.menu-page main .menu-card h3,
+.menu-page main .menu-card-price,
+.menu-page main .menu-page-hero p:not(.section-eyebrow) {
+    font-size: max(16px, 1em);
+}
+.menu-page .section-eyebrow,
+.menu-page .breadcrumb,
+.menu-page .menu-badge,
+.menu-page .menu-disclaimer,
+.menu-page .menu-result-note,
+.menu-page .image-placeholder small {
+    font-size: 12px;
+}
+@media(max-width:767px){
+ .menu-page .menu-card h3,
+ .menu-page .menu-card-description,
+ .menu-page .menu-card-price,
+ .menu-page .menu-tab {font-size:16px}
+}
