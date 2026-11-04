@@ -130,8 +130,7 @@ body {
     position: relative;
     z-index: 20;
     width: 100%;
-    min-height: 168px;
-    background: #fff;
+background: #fff;
     box-sizing: border-box;
 }
 
@@ -374,7 +373,6 @@ body {
     box-sizing: border-box;
     font-size: 18px;
     text-align: center;
-    border-right: 1px solid #e2e2e2;
 }
 .site-header .nav-item-cta > a {
     min-height: 54px;
