@@ -66,3 +66,25 @@
 .partner-section-heading .partner-eyebrow{color:#d71920}
 @media(max-width:767px){.partner-page-hero{padding:36px 16px 24px}.partner-page-hero p:not(.section-eyebrow){font-size:15px}.partner-section{padding:48px 18px}}
 @media(max-width:480px){.partner-page-hero h1{font-size:28px}}
+
+
+
+/* Content typography floor: 16px minimum; eyebrow and micro labels are exempt. */
+.partner-page main p:not(.partner-eyebrow):not(.partner-note),
+.partner-page main li,
+.partner-page main a,
+.partner-page main .partner-value h3,
+.partner-page main .partner-story-card h3,
+.partner-page main .partner-cta h2 {
+    font-size: max(16px, 1em);
+}
+.partner-page .partner-eyebrow,
+.partner-page .section-eyebrow,
+.partner-page .value-number,
+.partner-page .story-index,
+.partner-page .story-tag,
+.partner-page .partner-note,
+.partner-page .support-circle-front span,
+.partner-page .support-circle-front small {
+    font-size: 12px;
+}
