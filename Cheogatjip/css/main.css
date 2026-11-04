@@ -1684,3 +1684,15 @@ background: #fff;
 .newsletter-article[hidden]{display:none!important}
 @media(max-width:900px){.newsletter-board{padding:26px 22px 20px}.newsletter-article-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.newsletter-article:last-child{grid-column:1/-1}.newsletter-tools{align-items:flex-start;flex-direction:column}.newsletter-search{width:100%}}
 @media(max-width:600px){.newsletter-board{padding:20px 14px 16px;border-radius:12px}.newsletter-board-head{align-items:flex-start;flex-direction:column;gap:18px}.newsletter-board-head h3{font-size:24px}.newsletter-article-grid{grid-template-columns:1fr}.newsletter-article:last-child{grid-column:auto}.newsletter-article-visual{min-height:135px}.newsletter-categories{gap:5px}.newsletter-categories button{padding:8px 11px;font-size:12px}.newsletter-board-foot{align-items:flex-start;flex-direction:column}}
+
+/* Newsletter four-card newsroom layout */
+.newsletter-article-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.newsletter-article-image-slot{position:relative;display:grid;place-items:center;aspect-ratio:4/3;min-height:150px;overflow:hidden;background:linear-gradient(135deg,#f2efec,#e7e1dc);color:#9b9189}
+.newsletter-article-image-slot:before{content:"";position:absolute;inset:16px;border:1px dashed #c9beb5;border-radius:5px}
+.newsletter-article-image-slot span{position:relative;z-index:1;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.78);font-size:12px;font-weight:600}
+.newsletter-article-copy{padding:18px 18px 22px}
+.newsletter-article-meta{display:block;margin:0 0 9px;color:#c9002b;font-size:10px;font-weight:800;letter-spacing:.12em}
+.newsletter-article-copy h4{margin:0;color:#25201c;font-size:17px;line-height:1.45;letter-spacing:-.025em}
+.newsletter-article:hover .newsletter-article-image-slot{background:linear-gradient(135deg,#ece6e1,#ded5ce)}
+@media(max-width:1100px){.newsletter-article-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.newsletter-article:last-child{grid-column:auto}}
+@media(max-width:600px){.newsletter-article-grid{grid-template-columns:1fr}.newsletter-article-image-slot{aspect-ratio:16/9;min-height:130px}}
