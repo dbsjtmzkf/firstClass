@@ -27,3 +27,20 @@
 @media(max-width:767px){.menu-detail-wrap{padding-top:48px}.menu-detail-layout{grid-template-columns:1fr;gap:28px}.menu-detail-visual{max-width:560px;width:100%;margin:0 auto}.menu-detail-content h2{font-size:30px}.menu-detail-description{font-size:15px}.menu-detail-extra{margin-top:56px;padding:40px 16px}.menu-detail-actions a{flex:1}}
 @media(max-width:480px){.menu-detail-content h2{font-size:26px}.menu-detail-meta>div{grid-template-columns:82px 1fr}.menu-detail-actions{gap:8px}.menu-detail-back,.menu-detail-home{padding:0 16px;font-size:13px}}
 @media(prefers-reduced-motion:reduce){.menu-detail-back,.menu-detail-home{transition:none}}
+
+
+
+/* Detail page body copy and controls: minimum 16px; eyebrow/meta labels and notes stay small. */
+.menu-detail-page main p:not(.section-eyebrow):not(.menu-detail-note),
+.menu-detail-page main li,
+.menu-detail-page main button,
+.menu-detail-page main a,
+.menu-detail-page .menu-detail-meta dd,
+.menu-detail-page .menu-detail-meta dt {
+    font-size: max(16px, 1em);
+}
+.menu-detail-page .section-eyebrow,
+.menu-detail-page .menu-detail-note,
+.menu-detail-page .breadcrumb {
+    font-size: 12px;
+}
