@@ -190,16 +190,27 @@
                 </div>
                     </div>
                     <div class="webzine-tab-panel" id="webzine-panel-newsletter" role="tabpanel" aria-labelledby="webzine-tab-newsletter" data-webzine-panel="newsletter" hidden>
-                        <div class="webzine-list-card">
-                            <div class="webzine-list-copy">
-                                <p class="webzine-date">CHEOGAJIP NEWSLETTER</p>
-                                <h3>처갓집의 새로운 소식을 만나보세요</h3>
-                                <p class="webzine-description">브랜드 이야기와 신메뉴, 다양한 소식을 이곳에서 확인할 수 있습니다.</p>
+                        <div class="newsletter-board">
+                            <div class="newsletter-board-head">
+                                <div><p class="newsletter-board-kicker">CHEOGAJIP NEWSROOM</p><h3>처갓집의 새로운 소식</h3><p>브랜드 소식과 다양한 이야기를 만나보세요.</p></div>
+                                <a class="newsletter-all-link" href="https://www.cheogajip.co.kr/bbs/board.php?bo_table=newsroom" target="_blank" rel="noopener noreferrer">뉴스룸 전체보기 <span aria-hidden="true">↗</span></a>
                             </div>
-                            <a class="webzine-more" href="https://www.cheogajip.co.kr/bbs/board.php?bo_table=newsroom" target="_blank" rel="noopener noreferrer">뉴스레터 보기 <span aria-hidden="true">→</span></a>
+                            <div class="newsletter-tools">
+                                <div class="newsletter-categories" role="group" aria-label="뉴스 카테고리">
+                                    <button type="button" class="is-active" data-news-category="all">전체</button><button type="button" data-news-category="brand">브랜드 소식</button><button type="button" data-news-category="menu">메뉴 이야기</button><button type="button" data-news-category="event">이벤트</button>
+                                </div>
+                                <form class="newsletter-search" role="search"><label class="visually-hidden" for="newsletter-keyword">뉴스 검색</label><input id="newsletter-keyword" type="search" placeholder="검색어를 입력하세요"><button type="submit" aria-label="뉴스 검색">⌕</button></form>
+                            </div>
+                            <div class="newsletter-article-grid" id="newsletter-article-grid">
+                                <article class="newsletter-article" data-category="brand"><a href="https://www.cheogajip.co.kr/bbs/board.php?bo_table=newsroom" target="_blank" rel="noopener noreferrer"><div class="newsletter-article-visual visual-brand"><span>CHEOGAJIP</span><b>BRAND<br>STORY</b></div><div class="newsletter-article-copy"><p class="newsletter-article-meta"><span>브랜드 소식</span><span>NEWS</span></p><h4>처갓집이 전하는 브랜드 이야기</h4><p>처갓집의 다양한 소식과 브랜드 이야기를 뉴스룸에서 확인해 보세요.</p><span class="newsletter-article-link">자세히 보기 ↗</span></div></a></article>
+                                <article class="newsletter-article" data-category="menu"><a href="https://www.cheogajip.co.kr/bbs/board.php?bo_table=newsroom" target="_blank" rel="noopener noreferrer"><div class="newsletter-article-visual visual-menu"><span>CHEOGAJIP</span><b>MENU<br>STORY</b></div><div class="newsletter-article-copy"><p class="newsletter-article-meta"><span>메뉴 이야기</span><span>MENU</span></p><h4>맛있는 메뉴와 신제품 소식</h4><p>처갓집 메뉴와 제품 관련 소식을 한곳에서 만나보세요.</p><span class="newsletter-article-link">자세히 보기 ↗</span></div></a></article>
+                                <article class="newsletter-article" data-category="event"><a href="https://www.cheogajip.co.kr/bbs/board.php?bo_table=newsroom" target="_blank" rel="noopener noreferrer"><div class="newsletter-article-visual visual-event"><span>CHEOGAJIP</span><b>NEWS<br>& EVENT</b></div><div class="newsletter-article-copy"><p class="newsletter-article-meta"><span>이벤트</span><span>EVENT</span></p><h4>처갓집의 다양한 소식과 이벤트</h4><p>브랜드 소식과 진행 소식을 공식 뉴스룸에서 확인해 보세요.</p><span class="newsletter-article-link">자세히 보기 ↗</span></div></a></article>
+                            </div>
+                            <div class="newsletter-empty" id="newsletter-empty" hidden>검색 결과가 없습니다. 검색어나 카테고리를 변경해 주세요.</div>
+                            <div class="newsletter-board-foot"><span>CHEOGAJIP NEWSROOM</span><a href="https://www.cheogajip.co.kr/bbs/board.php?bo_table=newsroom" target="_blank" rel="noopener noreferrer">공식 뉴스룸 바로가기 ↗</a></div>
                         </div>
                     </div>
-                    <div class="webzine-tab-panel" id="webzine-panel-notice" role="tabpanel" aria-labelledby="webzine-tab-notice" data-webzine-panel="notice" hidden>
+                    data-webzine-panel="notice" hidden>
                         <div class="webzine-notice-list">
                             <article class="webzine-notice-item">
                                 <span class="webzine-notice-label">NOTICE</span>
@@ -485,5 +496,37 @@
             });
         })();
     </script>
-\n</body>
+\n    <script>
+        // Newsletter board category/search controls
+        (() => {
+            const board = document.querySelector('.newsletter-board');
+            if (!board) return;
+            const cards = Array.from(board.querySelectorAll('.newsletter-article'));
+            const buttons = Array.from(board.querySelectorAll('[data-news-category]'));
+            const search = board.querySelector('.newsletter-search');
+            const input = board.querySelector('#newsletter-keyword');
+            const empty = board.querySelector('#newsletter-empty');
+            let category = 'all';
+            const filter = () => {
+                const q = input.value.trim().toLowerCase();
+                let visible = 0;
+                cards.forEach(card => {
+                    const matchesCategory = category === 'all' || card.dataset.category === category;
+                    const matchesText = !q || card.textContent.toLowerCase().includes(q);
+                    const show = matchesCategory && matchesText;
+                    card.hidden = !show;
+                    if (show) visible++;
+                });
+                empty.hidden = visible > 0;
+            };
+            buttons.forEach(button => button.addEventListener('click', () => {
+                category = button.dataset.newsCategory;
+                buttons.forEach(item => item.classList.toggle('is-active', item === button));
+                filter();
+            }));
+            search.addEventListener('submit', event => { event.preventDefault(); filter(); });
+            input.addEventListener('input', filter);
+        })();
+    </script>
+</body>
 </html>
