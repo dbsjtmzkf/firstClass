@@ -1696,3 +1696,26 @@ background: #fff;
 .newsletter-article:hover .newsletter-article-image-slot{background:linear-gradient(135deg,#ece6e1,#ded5ce)}
 @media(max-width:1100px){.newsletter-article-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.newsletter-article:last-child{grid-column:auto}}
 @media(max-width:600px){.newsletter-article-grid{grid-template-columns:1fr}.newsletter-article-image-slot{aspect-ratio:16/9;min-height:130px}}
+
+/* Site-wide rounded corners: keep the main visual banner square */
+#wrap :is(section:not(.hero-sec), article, img, video, iframe, button, input, select, textarea, .swiper:not(.visual), .menu-card-image, .menu-card-info, .store-finder-box, .store-result-card, .global-store-card, .newsletter-board, .newsletter-article, .webzine-list-card, .webzine-video, .webzine-notice-item, .mega-menu, .mega-menu-column, .home-section > a, .menu-all-link, .webzine-more, .store-search-button, .global-filter button) {
+    border-radius: 12px;
+}
+#wrap .hero-sec,
+#wrap .hero-sec .visual,
+#wrap .hero-sec .visual .swiper-wrapper,
+#wrap .hero-sec .visual .swiper-slide,
+#wrap .hero-sec .visual img {
+    border-radius: 0 !important;
+}
+#wrap .hero-sec .visual .swiper-pagination,
+#wrap .hero-sec .visual .swiper-button-prev,
+#wrap .hero-sec .visual .swiper-button-next,
+#wrap .hero-sec .visual .swiper-scrollbar {
+    border-radius: 0;
+}
+#wrap .menu-card-image img,
+#wrap .webzine-video-poster img,
+#wrap .newsletter-article-image-slot img {
+    border-radius: 0;
+}
