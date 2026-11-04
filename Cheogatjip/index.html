@@ -166,7 +166,7 @@
                                 <a class="webzine-more" href="https://youtu.be/w4Tuzai8h3I?si=BDxX90KGmwgmEtRK" target="_blank" rel="noopener noreferrer">더보기 <span aria-hidden="true">→</span></a>
                             </div>
                             <div class="webzine-video">
-                                <iframe src="https://www.youtube-nocookie.com/embed/w4Tuzai8h3I?rel=0&enablejsapi=1" title="떵개떵의 처갓집치킨 먹방" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <button class="webzine-video-poster" type="button" data-video-id="w4Tuzai8h3I" aria-label="떵개떵의 처갓집치킨 먹방 재생"><img src="https://i.ytimg.com/vi/w4Tuzai8h3I/hqdefault.jpg" alt="" loading="lazy" decoding="async"><span class="webzine-play-icon" aria-hidden="true">▶</span></button>
                             </div>
                         </article>
                         <article class="webzine-feature webzine-slide swiper-slide" data-title="처갓집 브랜드 영상" data-date="CHEOGAJIP VIDEO" data-description="두 번째 처갓집 영상을 감상해 보세요." data-video="xSBXgd39_5Q" aria-hidden="true">
@@ -177,7 +177,7 @@
                                 <a class="webzine-more" href="https://youtu.be/xSBXgd39_5Q?si=LUJOkejOgGaFm2hS" target="_blank" rel="noopener noreferrer">더보기 <span aria-hidden="true">→</span></a>
                             </div>
                             <div class="webzine-video">
-                                <iframe src="https://www.youtube-nocookie.com/embed/xSBXgd39_5Q?rel=0&enablejsapi=1" title="처갓집 브랜드 영상" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <button class="webzine-video-poster" type="button" data-video-id="xSBXgd39_5Q" aria-label="처갓집 브랜드 영상 재생"><img src="https://i.ytimg.com/vi/xSBXgd39_5Q/hqdefault.jpg" alt="" loading="lazy" decoding="async"><span class="webzine-play-icon" aria-hidden="true">▶</span></button>
                             </div>
                         </article>
                     </div>
@@ -379,6 +379,24 @@
                     card.hidden = filter !== 'recommend' && !categories.includes(filter);
                 });
             });
+        });
+    </script>
+
+    <script>
+        // YouTube는 사용자가 재생을 누를 때만 iframe을 생성해 초기 페이지 로딩을 줄입니다.
+        document.querySelectorAll('.webzine-video-poster').forEach((poster) => {
+            poster.addEventListener('click', () => {
+                const videoId = poster.dataset.videoId;
+                if (!videoId) return;
+                const iframe = document.createElement('iframe');
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(videoId) + '?rel=0&enablejsapi=1&autoplay=1';
+                iframe.title = poster.getAttribute('aria-label') || '브랜드 영상';
+                iframe.loading = 'lazy';
+                iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                iframe.allowFullscreen = true;
+                poster.replaceWith(iframe);
+            }, { once: true });
         });
     </script>
 
