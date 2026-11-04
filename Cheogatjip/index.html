@@ -149,7 +149,14 @@
                     <h2 id="webzine-title">브랜드 웹진</h2>
                     <p>처갓집의 이야기를 영상으로 만나보세요</p>
                 </div>
-                <div class="webzine-slider" data-webzine-slider>
+                <div class="webzine-tabs" role="tablist" aria-label="브랜드 웹진 콘텐츠">
+                    <button class="webzine-tab is-active" id="webzine-tab-youtube" type="button" role="tab" aria-selected="true" aria-controls="webzine-panel-youtube" data-webzine-tab="youtube">YouTube</button>
+                    <button class="webzine-tab" id="webzine-tab-newsletter" type="button" role="tab" aria-selected="false" aria-controls="webzine-panel-newsletter" data-webzine-tab="newsletter" tabindex="-1">Newsletter</button>
+                    <button class="webzine-tab" id="webzine-tab-notice" type="button" role="tab" aria-selected="false" aria-controls="webzine-panel-notice" data-webzine-tab="notice" tabindex="-1">공지사항</button>
+                </div>
+                <div class="webzine-tab-panels">
+                    <div class="webzine-tab-panel is-active" id="webzine-panel-youtube" role="tabpanel" aria-labelledby="webzine-tab-youtube" data-webzine-panel="youtube">
+                        <div class="webzine-slider" data-webzine-slider>
                     <div class="webzine-slides" aria-live="polite">
                         <article class="webzine-feature webzine-slide is-active" data-title="떵개떵의 처갓집치킨 먹방" data-date="CHEOGAJIP × 떵개떵" data-description="먹방 크리에이터 떵개떵과 함께 처갓집치킨의 맛있는 순간을 만나보세요." data-video="w4Tuzai8h3I">
                             <div class="webzine-copy">
@@ -181,7 +188,32 @@
                         <button type="button" aria-label="두 번째 영상으로 이동" aria-current="false"></button>
                     </div>
                 </div>
-            </section>
+                    </div>
+                    <div class="webzine-tab-panel" id="webzine-panel-newsletter" role="tabpanel" aria-labelledby="webzine-tab-newsletter" data-webzine-panel="newsletter" hidden>
+                        <div class="webzine-list-card">
+                            <div class="webzine-list-copy">
+                                <p class="webzine-date">CHEOGAJIP NEWSLETTER</p>
+                                <h3>처갓집의 새로운 소식을 만나보세요</h3>
+                                <p class="webzine-description">브랜드 이야기와 신메뉴, 다양한 소식을 이곳에서 확인할 수 있습니다.</p>
+                            </div>
+                            <a class="webzine-more" href="#newsletter">뉴스레터 보기 <span aria-hidden="true">→</span></a>
+                        </div>
+                    </div>
+                    <div class="webzine-tab-panel" id="webzine-panel-notice" role="tabpanel" aria-labelledby="webzine-tab-notice" data-webzine-panel="notice" hidden>
+                        <div class="webzine-notice-list">
+                            <article class="webzine-notice-item">
+                                <span class="webzine-notice-label">NOTICE</span>
+                                <div><h3>처갓집양념치킨 공지사항</h3><p>브랜드의 주요 안내와 공지 내용을 확인해 주세요.</p></div>
+                                <a href="#notice" aria-label="공지사항 확인">→</a>
+                            </article>
+                            <article class="webzine-notice-item">
+                                <span class="webzine-notice-label">NEWS</span>
+                                <div><h3>새로운 소식을 전해드립니다</h3><p>신규 소식과 이용 안내를 이 영역에서 확인할 수 있습니다.</p></div>
+                                <a href="#notice" aria-label="새로운 소식 확인">→</a>
+                            </article>
+                        </div>
+                    </div>
+                </div>            </section>
 
             <section class="home-section store-section" aria-labelledby="store-title">
                 <div class="section-heading store-heading">
@@ -391,6 +423,45 @@
                 showSlide(current);
             }));
             showSlide(current);
+        })();
+    </script>
+\n
+
+
+    <script>
+        // 브랜드 웹진 탭 전환
+        (() => {
+            const tabs = Array.from(document.querySelectorAll('[data-webzine-tab]'));
+            const panels = Array.from(document.querySelectorAll('[data-webzine-panel]'));
+            if (!tabs.length || !panels.length) return;
+            const activate = (tab, moveFocus = false) => {
+                const name = tab.dataset.webzineTab;
+                tabs.forEach(item => {
+                    const active = item === tab;
+                    item.classList.toggle('is-active', active);
+                    item.setAttribute('aria-selected', String(active));
+                    item.tabIndex = active ? 0 : -1;
+                });
+                panels.forEach(panel => {
+                    const active = panel.dataset.webzinePanel === name;
+                    panel.hidden = !active;
+                    panel.classList.toggle('is-active', active);
+                });
+                if (moveFocus) tab.focus();
+            };
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => activate(tab));
+                tab.addEventListener('keydown', event => {
+                    let next = index;
+                    if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+                    else if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+                    else if (event.key === 'Home') next = 0;
+                    else if (event.key === 'End') next = tabs.length - 1;
+                    else return;
+                    event.preventDefault();
+                    activate(tabs[next], true);
+                });
+            });
         })();
     </script>
 \n</body>
