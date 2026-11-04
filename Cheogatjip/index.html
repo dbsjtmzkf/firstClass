@@ -383,39 +383,46 @@
     </script>
 
     <script>
-        // 브랜드 웹진 Swiper: 탭 패널 안에서만 동작하도록 초기화/갱신
+        // 브랜드 웹진 Swiper: iframe src를 전환 때마다 변경하지 않아 영상 재로딩/깜빡임 방지
         (() => {
             const sliderElement = document.querySelector('[data-webzine-slider]');
             if (!sliderElement || typeof Swiper === 'undefined') return;
-            const slides = Array.from(sliderElement.querySelectorAll('.webzine-slide'));
             const dots = Array.from(sliderElement.querySelectorAll('.webzine-pagination button'));
-            const setVideo = (activeIndex) => {
-                slides.forEach((slide, index) => {
-                    const frame = slide.querySelector('iframe');
-                    if (!frame) return;
-                    frame.src = index === activeIndex
-                        ? 'https://www.youtube-nocookie.com/embed/' + slide.dataset.video + '?rel=0'
-                        : 'about:blank';
-                });
+            const syncWebzineState = (swiper) => {
+                const activeIndex = swiper.realIndex;
                 dots.forEach((dot, index) => {
                     const active = index === activeIndex;
                     dot.classList.toggle('is-active', active);
                     dot.setAttribute('aria-current', String(active));
                 });
+
+                // iframe은 유지하고 비활성 영상만 일시정지합니다. src를 about:blank로 바꾸면
+                // 다시 돌아올 때마다 YouTube가 재로딩되어 화면이 깜빡입니다.
+                sliderElement.querySelectorAll('.swiper-slide iframe').forEach((frame) => {
+                    const slide = frame.closest('.swiper-slide');
+                    if (slide && !slide.classList.contains('swiper-slide-active')) {
+                        frame.contentWindow?.postMessage(
+                            JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }),
+                            '*'
+                        );
+                    }
+                });
             };
             const webzineSwiper = new Swiper(sliderElement, {
                 slidesPerView: 1,
                 loop: true,
-                autoHeight: true,
-                observer: true,
-                observeParents: true,
+                speed: 550,
+                autoHeight: false,
+                observer: false,
+                observeParents: false,
+                watchSlidesProgress: true,
                 navigation: {
                     nextEl: sliderElement.querySelector('.webzine-next'),
                     prevEl: sliderElement.querySelector('.webzine-prev')
                 },
                 on: {
-                    init() { setVideo(this.realIndex); },
-                    slideChange() { setVideo(this.realIndex); }
+                    init() { syncWebzineState(this); },
+                    slideChangeTransitionEnd() { syncWebzineState(this); }
                 }
             });
             dots.forEach((dot, index) => dot.addEventListener('click', () => webzineSwiper.slideToLoop(index)));
