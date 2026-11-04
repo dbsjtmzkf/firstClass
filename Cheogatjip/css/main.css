@@ -1342,10 +1342,8 @@ body {
     width: 100%;
 }
 .webzine-slide {
-    display: none;
-}
-.webzine-slide.is-active {
     display: grid;
+    height: auto;
 }
 .webzine-arrow {
     position: absolute;
