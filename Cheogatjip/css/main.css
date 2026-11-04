@@ -1456,3 +1456,34 @@ body {
     }
     .site-header.is-menu-open .mega-menu { transform: translateY(0); }
 }
+
+
+
+/* Main content typography: readable 16px minimum.
+   Header/footer and tiny eyebrow, badge, breadcrumb, and fine-print labels stay compact. */
+.home-section p:not(.section-eyebrow),
+.home-section li,
+.home-section .menu-tab,
+.home-section .menu-card-info h3,
+.home-section .menu-card-info p,
+.home-section .webzine-more,
+.home-section .webzine-copy h3,
+.home-section .webzine-description,
+.home-section .menu-result-bar,
+.home-section .menu-card-price,
+.home-section .store-section-content,
+.home-section .app-download-content {
+    font-size: max(16px, 1em);
+}
+.home-section .section-eyebrow,
+.home-section .menu-badge,
+.home-section .webzine-date,
+.home-section .menu-disclaimer,
+.home-section .menu-result-note,
+.home-section .app-store-badge small {
+    font-size: 12px;
+}
+.home-section .menu-heading > p:last-child,
+.home-section .section-heading > p:last-child {
+    font-size: max(16px, 1em);
+}
