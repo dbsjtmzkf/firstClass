@@ -601,10 +601,13 @@ background: #fff;
 }
 .footer-social-image {
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 22px;
+    height: 22px;
     object-fit: contain;
     flex: 0 0 auto;
+}
+.footer-social-links a {
+    align-items: center;
 }
 .footer-social-links {
     display: flex;
