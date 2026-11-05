@@ -586,24 +586,25 @@ background: #fff;
     justify-content: flex-end;
     gap: 24px;
 }
-.footer-brand-mark {
-    color: #333;
-    font-size: 17px;
-    font-weight: 900;
-    white-space: nowrap;
+.footer-brand-image {
+    display: block;
+    height: auto;
+    object-fit: contain;
 }
-.footer-brand-mark:first-child::before {
-    content: "153";
-    display: inline-block;
-    margin-right: 5px;
-    color: #c9002b;
-    font-size: 20px;
-    font-style: italic;
+.footer-brand-family {
+    width: 170px;
+    max-width: 42vw;
 }
-.footer-brand-mark-english {
-    font-size: 13px;
-    line-height: 1.15;
-    text-align: right;
+.footer-brand-company {
+    width: 145px;
+    max-width: 38vw;
+}
+.footer-social-image {
+    display: block;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    flex: 0 0 auto;
 }
 .footer-social-links {
     display: flex;
