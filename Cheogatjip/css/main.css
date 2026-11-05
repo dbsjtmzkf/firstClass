@@ -1329,10 +1329,14 @@ background: #fff;
     line-height: 1;
 }
 @media (max-width: 767px) {
+    .app-download-banner {
+        width: min(100%, 420px);
+    }
     .app-download-links {
-        right: 3%;
+        left: 50%;
+        right: auto;
         gap: 5px;
-        width: clamp(92px, 25%, 125px);
+        width: clamp(145px, 44%, 185px);
     }
     .app-store-badge {
         min-height: 29px;
