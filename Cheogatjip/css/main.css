@@ -1723,3 +1723,50 @@ background: #fff;
 #wrap .newsletter-article-image-slot img {
     border-radius: 0;
 }
+
+
+/* APP 다운로드 버튼 크기 확대 */
+.app-download-links {
+    width: clamp(150px, 20%, 210px);
+    gap: 12px;
+}
+.app-store-badge {
+    min-height: 54px;
+    gap: 11px;
+    padding: 8px 16px;
+}
+.app-store-badge svg,
+.apple-store-mark {
+    flex-basis: 25px;
+    width: 25px;
+    height: 25px;
+}
+.app-store-badge small {
+    font-size: 9px;
+}
+.app-store-badge strong {
+    font-size: 16px;
+}
+@media (max-width: 767px) {
+    .app-download-links {
+        width: clamp(112px, 29%, 150px);
+        gap: 7px;
+    }
+    .app-store-badge {
+        min-height: 36px;
+        gap: 6px;
+        padding: 5px 9px;
+    }
+    .app-store-badge svg,
+    .apple-store-mark {
+        flex-basis: 17px;
+        width: 17px;
+        height: 17px;
+    }
+    .app-store-badge small {
+        font-size: 6px;
+    }
+    .app-store-badge strong {
+        font-size: 11px;
+    }
+}
