@@ -1127,6 +1127,7 @@ background: #fff;
     justify-content: space-between;
     gap: 16px;
     padding: 20px clamp(22px, 3vw, 42px);
+    border-radius: 18px;
     background: #8a5b3f;
     color: #fff;
     text-decoration: none;
