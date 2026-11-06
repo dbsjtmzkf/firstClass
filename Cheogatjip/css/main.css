@@ -1727,46 +1727,46 @@ background: #fff;
 
 /* APP 다운로드 버튼 크기 확대 */
 .app-download-links {
-    width: clamp(150px, 20%, 210px);
-    gap: 12px;
+    width: clamp(180px, 23%, 250px);
+    gap: 14px;
 }
 .app-store-badge {
-    min-height: 54px;
-    gap: 11px;
-    padding: 8px 16px;
+    min-height: 66px;
+    gap: 13px;
+    padding: 10px 19px;
 }
 .app-store-badge svg,
 .apple-store-mark {
-    flex-basis: 25px;
-    width: 25px;
-    height: 25px;
+    flex-basis: 30px;
+    width: 30px;
+    height: 30px;
 }
 .app-store-badge small {
-    font-size: 9px;
+    font-size: 10px;
 }
 .app-store-badge strong {
-    font-size: 16px;
+    font-size: 18px;
 }
 @media (max-width: 767px) {
     .app-download-links {
-        width: clamp(112px, 29%, 150px);
-        gap: 7px;
+        width: clamp(125px, 32%, 165px);
+        gap: 8px;
     }
     .app-store-badge {
-        min-height: 36px;
-        gap: 6px;
-        padding: 5px 9px;
+        min-height: 42px;
+        gap: 7px;
+        padding: 6px 10px;
     }
     .app-store-badge svg,
     .apple-store-mark {
-        flex-basis: 17px;
-        width: 17px;
-        height: 17px;
+        flex-basis: 19px;
+        width: 19px;
+        height: 19px;
     }
     .app-store-badge small {
-        font-size: 6px;
+        font-size: 7px;
     }
     .app-store-badge strong {
-        font-size: 11px;
+        font-size: 12px;
     }
 }
