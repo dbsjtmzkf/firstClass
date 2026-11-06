@@ -5,7 +5,7 @@
   "k-mala":{name:"K-마라 양념치킨",category:"신메뉴 · 치킨",description:"매콤한 마라 풍미를 더해 색다르게 즐기는 양념치킨입니다.",price:"19,000원 + 추가금",image:"img/thumb-1926160956_nRZEOJGp_615ce8c889ffa791d38572416244402b079e12c4_280x0%201.png",alt:"K-마라 양념치킨"},
   "meat-chili":{name:"미트칠리 양념치킨",category:"신메뉴 · 치킨",description:"매콤달콤한 미트칠리 풍미를 담은 메뉴입니다.",price:"19,000원 + 추가금",image:"img/thumb-2944075207_iEoYJC2D_4ca15e36798c0af67c0f0a10ec836015492c7dd0_280x0%201.png",alt:"미트칠리 양념치킨"},
   "fried":{name:"후라이드 치킨",category:"치킨",description:"바삭하고 담백한 클래식 치킨 메뉴입니다.",price:"매장별 확인",placeholder:true},
-  "side":{name:"사이드 메뉴",category:"사이드",description:"치킨과 함께 즐기는 곁들임 메뉴를 만나보세요.",price:"매장별 확인",placeholder:true},
+  "side":{name:"사이드 메뉴",category:"사이드",description:"치킨과 함께 즐기는 곁들임 메뉴를 만나보세요.",price:"매장별 확인",image:"img/thumb-2109327413_80poSNle_b04e1f5dd2b740b60182263a3952441ab70da444_280x280.jpg",alt:"사이드 메뉴"},
   "cheese-ball":{name:"치즈볼",category:"사이드",description:"한입에 즐기는 고소한 사이드 메뉴입니다.",price:"매장별 확인",placeholder:true},
   "drink":{name:"주류",category:"주류",description:"메뉴와 함께 즐기는 주류 메뉴입니다.",price:"매장별 확인",placeholder:true}
  };
