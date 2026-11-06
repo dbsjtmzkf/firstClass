@@ -7,7 +7,7 @@
   "fried":{name:"후라이드 치킨",category:"치킨",description:"바삭하고 담백한 클래식 치킨 메뉴입니다.",price:"매장별 확인",image:"img/6419128065_152445572.jpg",alt:"후라이드 치킨"},
   "side":{name:"사이드 메뉴",category:"사이드",description:"치킨과 함께 즐기는 곁들임 메뉴를 만나보세요.",price:"매장별 확인",image:"img/thumb-2109327413_80poSNle_b04e1f5dd2b740b60182263a3952441ab70da444_280x280.jpg",alt:"사이드 메뉴"},
   "cheese-ball":{name:"치즈볼",category:"사이드",description:"한입에 즐기는 고소한 사이드 메뉴입니다.",price:"매장별 확인",image:"img/thumb-3034659209_hMOK9ClU_66fbdf7ffbde691055c8614fffee52750e4f9fc4_280x0.jpg",alt:"치즈볼"},
-  "drink":{name:"주류",category:"주류",description:"메뉴와 함께 즐기는 주류 메뉴입니다.",price:"매장별 확인",placeholder:true}
+  "drink":{name:"주류",category:"주류",description:"메뉴와 함께 즐기는 주류 메뉴입니다.",price:"매장별 확인",image:"img/art_1572226867.jpg",alt:"주류"}
  };
  const id=new URLSearchParams(location.search).get('item')||'supreme-black';
  const item=data[id]||data["supreme-black"];
