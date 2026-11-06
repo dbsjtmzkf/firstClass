@@ -6,7 +6,7 @@
   "meat-chili":{name:"미트칠리 양념치킨",category:"신메뉴 · 치킨",description:"매콤달콤한 미트칠리 풍미를 담은 메뉴입니다.",price:"19,000원 + 추가금",image:"img/thumb-2944075207_iEoYJC2D_4ca15e36798c0af67c0f0a10ec836015492c7dd0_280x0%201.png",alt:"미트칠리 양념치킨"},
   "fried":{name:"후라이드 치킨",category:"치킨",description:"바삭하고 담백한 클래식 치킨 메뉴입니다.",price:"매장별 확인",placeholder:true},
   "side":{name:"사이드 메뉴",category:"사이드",description:"치킨과 함께 즐기는 곁들임 메뉴를 만나보세요.",price:"매장별 확인",image:"img/thumb-2109327413_80poSNle_b04e1f5dd2b740b60182263a3952441ab70da444_280x280.jpg",alt:"사이드 메뉴"},
-  "cheese-ball":{name:"치즈볼",category:"사이드",description:"한입에 즐기는 고소한 사이드 메뉴입니다.",price:"매장별 확인",placeholder:true},
+  "cheese-ball":{name:"치즈볼",category:"사이드",description:"한입에 즐기는 고소한 사이드 메뉴입니다.",price:"매장별 확인",image:"img/thumb-3034659209_hMOK9ClU_66fbdf7ffbde691055c8614fffee52750e4f9fc4_280x0.jpg",alt:"치즈볼"},
   "drink":{name:"주류",category:"주류",description:"메뉴와 함께 즐기는 주류 메뉴입니다.",price:"매장별 확인",placeholder:true}
  };
  const id=new URLSearchParams(location.search).get('item')||'supreme-black';
