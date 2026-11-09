@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>회원가입 | 처갓집양념치킨</title>
+<link rel="stylesheet" href="../css/default.css">
+<link rel="stylesheet" href="../font/css/pretendardvariable.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/auth.css">
+</head>
+<body><div id="wrap"><header class="site-header"><div class="header-inner"><div class="header-utility"><a href="login.html">로그인</a><span>|</span><a href="signup.html">회원가입</a><span>|</span><a href="customer.html">고객센터</a><span>|</span><a href="#gift">상품권</a></div><a href="index.html" class="brand-logo" aria-label="처갓집양념치킨 홈"><img src="img/처갓집%20로고.png" alt="처갓집양념치킨"></a><nav class="main-nav" aria-label="주요 메뉴"><div class="nav-item"><a href="menu.html">메뉴안내</a></div><div class="nav-item"><a href="partner.html">동반성장</a></div><div class="nav-item"><a href="cheodolika.html">처돌이카</a></div><div class="nav-item"><a href="store.html">매장안내</a></div><div class="nav-item"><a href="overseas.html">해외매장</a></div><div class="nav-item"><a href="news.html">처갓집소식</a></div><div class="nav-item nav-item-cta"><a href="franchise.html" aria-current="page">창업안내</a></div></nav><div class="mega-menu" aria-label="하위 메뉴"><div class="mega-menu-column"><a href="menu.html">다 맛있는 처갓집</a><a href="menu.html">이달의 추천치킨</a></div><div class="mega-menu-column"><a href="partner.html">처갓집 소개</a><a href="partner.html#promise">30년 전통의 이유</a><a href="partner.html#support">처갓집 HELPER 제도</a><a href="partner.html#stories">상생이야기</a></div><div class="mega-menu-column"><a href="cheodolika.html#activities">활동 소개</a><a href="cheodolika.html#story">처돌이카의 발자취</a><a href="cheodolika.html#news">이번 주 일정</a><a href="cheodolika.html#activities">처돌이카 출동 신청</a></div><div class="mega-menu-column"><a href="store.html">처갓집 매장찾기</a><a href="news.html#news-list">공지사항</a><a href="customer.html">고객의 소리</a></div><div class="mega-menu-column"><a href="overseas.html">해외지사 OPENSTORY</a><a href="overseas.html#global-stores">해외 매장정보</a></div><div class="mega-menu-column"><a href="news.html#events">이벤트</a><a href="news.html#news-list">뉴스룸</a></div><div class="mega-menu-column"><a href="franchise.html">창업 안내</a><a href="franchise.html#process">개설 절차</a><a href="franchise.html#support">본사 지원</a><a href="franchise.html#faq">창업 FAQ</a></div></div></div></header>
+<main class="auth-page">
+  <section class="auth-hero">
+    <p class="auth-eyebrow">CHEOGAJIP MEMBERSHIP</p>
+    <h1>회원가입</h1>
+    <p>처갓집과 함께 더 맛있는 일상을 시작해 보세요.</p>
+    <nav class="auth-breadcrumb"><a href="index.html">HOME</a><span>›</span><strong>회원가입</strong></nav>
+  </section>
+  <section class="auth-content auth-content-wide">
+    <div class="auth-card auth-signup-card">
+      <div class="auth-card-heading"><span>JOIN MEMBERSHIP</span><h2>회원 정보 입력</h2><p>아래 정보를 입력해 회원가입을 진행해 주세요.</p></div>
+      <form id="signup-form" class="auth-form auth-signup-form">
+        <label class="auth-input"><span>아이디 <b>*</b></span><input type="text" name="userId" placeholder="영문, 숫자 조합 4~16자" minlength="4" maxlength="16" pattern="[A-Za-z0-9]{4,16}" autocomplete="username" required></label>
+        <label class="auth-input"><span>비밀번호 <b>*</b></span><input type="password" id="signup-password" name="password" placeholder="영문, 숫자, 특수문자 포함 8자 이상" minlength="8" autocomplete="new-password" required></label>
+        <label class="auth-input"><span>비밀번호 확인 <b>*</b></span><input type="password" id="signup-password-confirm" name="passwordConfirm" placeholder="비밀번호를 다시 입력해 주세요" minlength="8" autocomplete="new-password" required></label>
+        <label class="auth-input"><span>이름 <b>*</b></span><input type="text" name="name" placeholder="이름을 입력해 주세요" autocomplete="name" required></label>
+        <label class="auth-input"><span>휴대폰 번호 <b>*</b></span><input type="tel" name="phone" placeholder="숫자만 입력해 주세요" inputmode="numeric" pattern="[0-9]{10,11}" autocomplete="tel" required></label>
+        <label class="auth-input"><span>이메일</span><input type="email" name="email" placeholder="이메일 주소를 입력해 주세요" autocomplete="email"></label>
+        <div class="auth-terms">
+          <label class="auth-check auth-all-check"><input type="checkbox" id="agree-all"> 전체 약관에 동의합니다.</label>
+          <div class="auth-terms-divider"></div>
+          <label class="auth-check"><input type="checkbox" class="required-agreement" required> <span><b>[필수]</b> 이용약관에 동의합니다.</span><a href="#terms" class="auth-inert-link">보기</a></label>
+          <label class="auth-check"><input type="checkbox" class="required-agreement" required> <span><b>[필수]</b> 개인정보 수집 및 이용에 동의합니다.</span><a href="#privacy" class="auth-inert-link">보기</a></label>
+          <label class="auth-check"><input type="checkbox" name="marketing"> <span>[선택] 이벤트 및 혜택 정보 수신에 동의합니다.</span></label>
+        </div>
+        <button type="submit" class="auth-primary-button">회원가입</button>
+      </form>
+      <div class="auth-signup-prompt"><span>이미 회원이신가요?</span><a href="login.html">로그인 <b>→</b></a></div>
+    </div>
+    <p class="auth-demo-notice">※ 포트폴리오 시안 페이지입니다. 입력 정보는 저장되거나 실제 회원으로 등록되지 않습니다.</p>
+  </section>
+</main><footer class="site-footer">
+    <div class="footer-quicklinks">
+        <div class="footer-quicklinks-inner">
+            <nav class="footer-link-list" aria-label="하단 주요 링크">
+                <a href="#store">처갓집 매장찾기</a>
+                <a href="#franchise">가맹문의</a>
+                <a href="customer.html">고객의 소리</a>
+                <a href="#privacy">개인정보처리방침</a>
+            </nav>
+            <label class="family-site-label" for="family-site">패밀리사이트</label>
+            <select id="family-site" class="family-site-select" aria-label="패밀리사이트 선택">
+                <option value="">패밀리사이트</option>
+                <option value="#company">처갓집양념치킨</option>
+                <option value="#franchise">가맹문의</option>
+            </select>
+        </div>
+    </div>
+    <div class="footer-main">
+        <div class="footer-company-info">
+            <p><span>(주)한국일오삼</span><span>대표이사 : 신 동 욱</span><span>사업자등록번호 : 534 - 87 - 03724</span></p>
+            <p><span>주소 : 경기 용인시 기흥구 석성로 515(동백동)</span><span>대표번호 : 02 - 5798 - 153</span></p>
+            <p class="footer-copyright">COPYRIGHTS(C) 2017 CHEOGAJIP. ALL RIGHTS RESERVED</p>
+        </div>
+        <div class="footer-right">
+            <div class="footer-brand-marks">
+                <img class="footer-brand-image footer-brand-family" src="img/footer_logo_02.png" alt="처갓집은 가족">
+                <img class="footer-brand-image footer-brand-company" src="img/footer_logo_01.png" alt="Food &amp; Service 153KOREA Co.,Ltd.">
+            </div>
+            <div class="footer-social-links" aria-label="소셜 미디어">
+                <a href="#blog"><img class="footer-social-image" src="img/footer-blog-icon.webp" alt="">블로그</a>
+                <a href="#instagram"><img class="footer-social-image" src="img/footer-facebook-icon.webp" alt="">인스타그램</a>
+                <a href="#facebook"><img class="footer-social-image" src="img/footer-instagram-icon.webp" alt="">페이스북</a>
+            </div>
+        </div>
+    </div>
+<p class="footer-portfolio-notice">이 사이트는 상업적 목적이 아닌 개인 포트폴리오 용도로 제작한 사이트입니다.</p>
+</footer></div>
+<script>
+const signupForm = document.getElementById('signup-form');
+const agreeAll = document.getElementById('agree-all');
+const agreementChecks = Array.from(document.querySelectorAll('.required-agreement'));
+agreeAll.addEventListener('change', function() {
+  document.querySelectorAll('.auth-terms input[type="checkbox"]').forEach(function(check) { check.checked = agreeAll.checked; });
+});
+document.querySelectorAll('.auth-terms input[type="checkbox"]:not(#agree-all)').forEach(function(check) {
+  check.addEventListener('change', function() {
+    agreeAll.checked = Array.from(document.querySelectorAll('.auth-terms input[type="checkbox"]:not(#agree-all)')).every(function(item) { return item.checked; });
+  });
+});
+signupForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+  if (!this.reportValidity()) return;
+  const password = document.getElementById('signup-password').value;
+  const confirm = document.getElementById('signup-password-confirm').value;
+  if (password !== confirm) { alert('비밀번호가 일치하지 않습니다.'); document.getElementById('signup-password-confirm').focus(); return; }
+  if (!/[A-Za-z]/.test(password) || !/[0-9]/.test(password) || !/[^A-Za-z0-9]/.test(password)) { alert('비밀번호는 영문, 숫자, 특수문자를 모두 포함해 주세요.'); document.getElementById('signup-password').focus(); return; }
+  alert('회원가입 페이지 시안입니다. 입력 정보는 실제로 저장되지 않습니다.');
+});
+document.querySelectorAll('.auth-inert-link').forEach(function(link) {
+  link.addEventListener('click', function(event) { event.preventDefault(); alert('약관 상세 기능은 포트폴리오 시안에 포함되어 있지 않습니다.'); });
+});
+</script>
+</body></html>
