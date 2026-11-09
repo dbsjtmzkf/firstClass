@@ -1,0 +1,48 @@
+/* Login & sign-up pages */
+.auth-page{background:#fff;color:#282321}
+.auth-hero{position:relative;padding:74px 24px 58px;background:#f7f3f0;text-align:center;overflow:hidden}
+.auth-hero:after{content:"CHEOGAJIP";position:absolute;right:5%;bottom:-24px;color:rgba(120,30,40,.045);font-size:clamp(70px,12vw,160px);font-weight:900;letter-spacing:-.07em;pointer-events:none}
+.auth-eyebrow{margin:0 0 13px;color:#c9002b;font-size:11px;font-weight:800;letter-spacing:.18em}
+.auth-hero h1{margin:0;color:#282321;font-size:clamp(32px,4vw,44px);font-weight:800;letter-spacing:-.06em}
+.auth-hero>p:not(.auth-eyebrow){margin:13px 0 0;color:#827873;font-size:15px}
+.auth-breadcrumb{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:28px;color:#a39a94;font-size:12px}
+.auth-breadcrumb a{color:inherit;text-decoration:none}
+.auth-breadcrumb strong{color:#554b45}
+.auth-content{width:min(100% - 40px,520px);margin:0 auto;padding:64px 0 88px}
+.auth-content-wide{width:min(100% - 40px,680px)}
+.auth-card{padding:42px 44px 32px;border:1px solid #eee7e2;border-radius:16px;background:#fff;box-shadow:0 14px 40px rgba(48,31,22,.055)}
+.auth-card-heading{text-align:center;margin-bottom:32px}
+.auth-card-heading>span{color:#c9002b;font-size:10px;font-weight:800;letter-spacing:.18em}
+.auth-card-heading h2{margin:10px 0 8px;color:#29231f;font-size:27px;letter-spacing:-.05em}
+.auth-card-heading p{margin:0;color:#8b817b;font-size:13px}
+.auth-form{display:flex;flex-direction:column;gap:17px}
+.auth-input{display:flex;flex-direction:column;gap:9px;color:#453c36;font-size:13px;font-weight:700}
+.auth-input>span b{color:#c9002b}
+.auth-input input{width:100%;height:52px;padding:0 16px;border:1px solid #e5ded9;border-radius:8px;outline:none;background:#fff;color:#302923;font:400 14px "Pretendard Variable",Pretendard,sans-serif;transition:border-color .2s,box-shadow .2s;box-sizing:border-box}
+.auth-input input::placeholder{color:#b7aea8}
+.auth-input input:focus{border-color:#c9002b;box-shadow:0 0 0 3px rgba(201,0,43,.07)}
+.auth-form-options{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#807670;font-size:12px}
+.auth-form-options>div{display:flex;align-items:center;gap:9px}
+.auth-form-options a{color:inherit;text-decoration:none}
+.auth-form-options i{width:1px;height:10px;background:#d8d0ca}
+.auth-check{display:flex;align-items:center;gap:8px;color:#756b65;font-size:13px;font-weight:500;cursor:pointer}
+.auth-check input{width:16px;height:16px;margin:0;accent-color:#c9002b}
+.auth-primary-button{width:100%;height:54px;margin-top:7px;border:0;border-radius:8px;background:#c9002b;color:#fff;font:700 15px "Pretendard Variable",Pretendard,sans-serif;cursor:pointer;transition:background .2s,transform .2s}
+.auth-primary-button:hover{background:#a90025;transform:translateY(-1px)}
+.auth-signup-prompt{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:27px;padding-top:24px;border-top:1px solid #eee8e3;color:#8b817b;font-size:12px}
+.auth-signup-prompt a{color:#c9002b;font-weight:800;text-decoration:none}
+.auth-signup-prompt b{padding-left:5px}
+.auth-demo-notice{margin:18px 0 0;color:#a49a93;text-align:center;font-size:11px;line-height:1.7}
+.auth-signup-card{padding:42px 48px 32px}
+.auth-signup-form{display:grid;grid-template-columns:1fr 1fr;gap:19px 16px}
+.auth-signup-form>.auth-input:nth-child(1),.auth-signup-form>.auth-input:nth-child(2),.auth-signup-form>.auth-input:nth-child(3){grid-column:1/-1}
+.auth-terms{grid-column:1/-1;margin-top:5px;padding:19px 20px;border:1px solid #eee7e2;border-radius:9px;background:#faf8f6}
+.auth-terms .auth-check{margin-top:13px}
+.auth-terms .auth-check:first-child{margin-top:0}
+.auth-terms .auth-check span{flex:1}
+.auth-terms .auth-check a{color:#91867f;font-size:11px;text-decoration:underline}
+.auth-terms .auth-check b{color:#c9002b}
+.auth-all-check{color:#342c27;font-weight:800}
+.auth-terms-divider{height:1px;margin:15px 0;background:#e9e1db}
+.auth-signup-form>.auth-primary-button{grid-column:1/-1;margin-top:2px}
+@media(max-width:600px){.auth-hero{padding:55px 18px 43px}.auth-content,.auth-content-wide{width:calc(100% - 28px);padding:38px 0 58px}.auth-card,.auth-signup-card{padding:30px 22px 24px;border-radius:12px}.auth-card-heading{margin-bottom:26px}.auth-card-heading h2{font-size:24px}.auth-signup-form{grid-template-columns:1fr;gap:16px}.auth-signup-form>.auth-input{grid-column:1/-1}.auth-terms{padding:16px 14px}.auth-form-options{font-size:11px}.auth-signup-prompt{gap:8px;font-size:11px}}
