@@ -1772,3 +1772,8 @@ background: #fff;
         font-size: 12px;
     }
 }
+
+
+/* Portfolio disclosure in the footer */
+.footer-portfolio-notice{margin:0;padding:12px 20px;border-top:1px solid #eee;text-align:center;color:#999;font-size:12px;line-height:1.6;letter-spacing:.01em;background:#fff}
+@media(max-width:600px){.footer-portfolio-notice{padding:11px 16px;font-size:11px}}
