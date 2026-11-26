@@ -1095,7 +1095,7 @@ background: #fff;
     padding: 0 12px 0 18px;
     border: 1px solid #8c8580;
     border-radius: 999px;
-    background: rgba(0,0,0,12);
+    background: rgba(0, 0, 0, .78);
 }
 .store-search-form input {
     width: 100%;
