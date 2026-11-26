@@ -1392,8 +1392,9 @@ background: #fff;
     background: #c9002b;
     transform: translateY(-50%) scale(1.06);
 }
+/* 영상 왼쪽에는 이전 화살표, 오른쪽에는 다음 화살표 배치 */
 .webzine-prev {
-    right: 66px;
+    left: 35%;
 }
 .webzine-next {
     right: 14px;
@@ -1434,7 +1435,7 @@ background: #fff;
         font-size: 25px;
     }
     .webzine-prev {
-        right: 54px;
+        left: 12px;
     }
     .webzine-next {
         right: 12px;
