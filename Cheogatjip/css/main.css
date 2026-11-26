@@ -1798,5 +1798,5 @@ background: #fff;
 /* Brand webzine: rounded corners for category tabs and more button only */
 #wrap .webzine-section .webzine-tab,
 #wrap .webzine-section .webzine-more {
-    border-radius: 12px;
+    border-radius: 999px;
 }
