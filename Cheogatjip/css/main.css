@@ -762,6 +762,7 @@ background: #fff;
     aspect-ratio: 16 / 9;
     overflow: hidden;
     background: #292725;
+    border-radius: 12px;
 }
 .webzine-video iframe {
     position: absolute;
@@ -1606,6 +1607,7 @@ background: #fff;
 
 /* Webzine video poster: avoid loading YouTube player until play is requested */
 .webzine-video-poster {
+    border-radius: 12px;
     position: absolute;
     inset: 0;
     display: block;
