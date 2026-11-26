@@ -1794,13 +1794,3 @@ background: #fff;
     #wrap .webzine-section .webzine-list-copy h3 { font-size: 23px; }
     #wrap .webzine-section .webzine-notice-item h3 { font-size: 19px; }
 }
-
-/* Brand webzine: independently rounded video and action buttons */
-#wrap .webzine-section .webzine-video {
-    border-radius: 12px;
-    overflow: hidden;
-}
-#wrap .webzine-section .webzine-more,
-#wrap .webzine-section .webzine-tab {
-    border-radius: 8px;
-}
