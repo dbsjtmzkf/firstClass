@@ -1777,3 +1777,20 @@ background: #fff;
 /* Portfolio disclosure in the footer */
 .footer-portfolio-notice{margin:0;padding:12px 20px;border-top:1px solid #eee;text-align:center;color:#999;font-size:12px;line-height:1.6;letter-spacing:.01em;background:#fff}
 @media(max-width:600px){.footer-portfolio-notice{padding:11px 16px;font-size:11px}}
+
+/* Brand webzine typography: slightly larger text */
+#wrap .webzine-section .webzine-date { font-size: 14px; }
+#wrap .webzine-section .webzine-copy h3 { font-size: clamp(24px, 2.35vw, 32px); }
+#wrap .webzine-section .webzine-description { font-size: 16px; }
+#wrap .webzine-section .webzine-more { font-size: 15px; }
+#wrap .webzine-section .webzine-tab { font-size: 17px; }
+#wrap .webzine-section .webzine-list-copy h3 { font-size: 30px; }
+#wrap .webzine-section .webzine-notice-label { font-size: 13px; }
+#wrap .webzine-section .webzine-notice-item h3 { font-size: 21px; }
+#wrap .webzine-section .webzine-notice-item p { font-size: 17px; }
+
+@media (max-width: 767px) {
+    #wrap .webzine-section .webzine-copy h3 { font-size: 25px; }
+    #wrap .webzine-section .webzine-list-copy h3 { font-size: 23px; }
+    #wrap .webzine-section .webzine-notice-item h3 { font-size: 19px; }
+}
