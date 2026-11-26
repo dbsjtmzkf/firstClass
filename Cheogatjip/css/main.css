@@ -1794,3 +1794,9 @@ background: #fff;
     #wrap .webzine-section .webzine-list-copy h3 { font-size: 23px; }
     #wrap .webzine-section .webzine-notice-item h3 { font-size: 19px; }
 }
+
+/* Brand webzine: rounded corners for category tabs and more button only */
+#wrap .webzine-section .webzine-tab,
+#wrap .webzine-section .webzine-more {
+    border-radius: 12px;
+}
