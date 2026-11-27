@@ -96,7 +96,7 @@
                 </div>
 
                 <div class="menu-card-grid">
-                    <article class="menu-card" data-categories="recommend seasoned">
+                    <article class="menu-card" data-categories="recommend seasoned" data-menu-id="supreme-black" tabindex="0" role="link" aria-label="슈프림양념치킨 블랙라벨 상세 보기">
                         <div class="menu-card-image">
                             <img src="img/image%2033.png" alt="슈프림양념치킨 블랙라벨" loading="lazy">
                             <span class="menu-badge menu-badge-best">BEST</span>
@@ -107,7 +107,7 @@
                             <p class="menu-card-price">19,000원</p>
                         </div>
                     </article>
-                    <article class="menu-card" data-categories="recommend new seasoned">
+                    <article class="menu-card" data-categories="recommend new seasoned" data-menu-id="supreme" tabindex="0" role="link" aria-label="슈프림 양념치킨 상세 보기">
                         <div class="menu-card-image">
                             <img src="img/image%2034.png" alt="슈프림 양념치킨" loading="lazy">
                             <span class="menu-badge menu-badge-new">NEW</span>
@@ -118,7 +118,7 @@
                             <p class="menu-card-price">19,000원</p>
                         </div>
                     </article>
-                    <article class="menu-card" data-categories="recommend fried">
+                    <article class="menu-card" data-categories="recommend fried" data-menu-id="k-mala" tabindex="0" role="link" aria-label="K-마라 양념치킨 상세 보기">
                         <div class="menu-card-image">
                             <img src="img/thumb-1926160956_nRZEOJGp_615ce8c889ffa791d38572416244402b079e12c4_280x0%201.png" alt="K-마라 양념치킨" loading="lazy">
                             <span class="menu-badge menu-badge-best">BEST</span>
@@ -129,7 +129,7 @@
                             <p class="menu-card-price">19,000원</p>
                         </div>
                     </article>
-                    <article class="menu-card" data-categories="recommend new seasoned">
+                    <article class="menu-card" data-categories="recommend new seasoned" data-menu-id="meat-chili" tabindex="0" role="link" aria-label="미트칠리 양념치킨 상세 보기">
                         <div class="menu-card-image">
                             <img src="img/thumb-2944075207_iEoYJC2D_4ca15e36798c0af67c0f0a10ec836015492c7dd0_280x0%201.png" alt="미트칠리 양념치킨" loading="lazy">
                             <span class="menu-badge menu-badge-new">NEW</span>
@@ -401,6 +401,20 @@
             });
         });
     
+        // 추천 메뉴 카드를 클릭하거나 키보드로 선택하면 해당 메뉴 상세 페이지로 이동
+        document.querySelectorAll('.menu-card[data-menu-id]').forEach((card) => {
+            const openMenuDetail = () => {
+                window.location.href = 'menu-detail.html?item=' + encodeURIComponent(card.dataset.menuId);
+            };
+            card.addEventListener('click', openMenuDetail);
+            card.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openMenuDetail();
+                }
+            });
+        });
+
         // 페이지 첫 로딩에서도 현재 활성 탭(기본: 추천)의 필터 적용
         const initialMenuTab = document.querySelector('.menu-tab.is-active') ||
             document.querySelector('.menu-tab[data-filter="recommend"]');
