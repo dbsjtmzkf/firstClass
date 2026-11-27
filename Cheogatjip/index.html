@@ -68,15 +68,17 @@
                             <img src="img/visual_202.png" alt="새로워진 처갓집 멤버십앱 홍보 배너" class="pc">
                         </div>
                     </div>
-                    <!-- If we need pagination -->
-                    <div class="swiper-pagination"></div>
-
-                    <!-- If we need navigation buttons -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-
-                    <!-- If we need scrollbar -->
-                    <div class="swiper-scrollbar"></div>
+                    <div class="visual-controls" aria-label="배너 슬라이드 컨트롤">
+                        <span class="visual-current">01</span>
+                        <div class="visual-progress" role="progressbar" aria-label="배너 진행 상태" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1">
+                            <span class="visual-progress-bar"></span>
+                        </div>
+                        <span class="visual-total">04</span>
+                        <div class="visual-control-arrows">
+                            <button class="visual-prev" type="button" aria-label="이전 배너">‹</button>
+                            <button class="visual-next" type="button" aria-label="다음 배너">›</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <section class="home-section menu-feature" aria-labelledby="menu-feature-title">
@@ -321,27 +323,32 @@
 </footer>
     </div>
     <script>
+        const visualElement = document.querySelector('.hero-sec .visual');
+        const visualTotal = visualElement.querySelectorAll('.swiper-wrapper > .swiper-slide').length;
+        const visualCurrent = visualElement.querySelector('.visual-current');
+        const visualTotalLabel = visualElement.querySelector('.visual-total');
+        const visualProgress = visualElement.querySelector('.visual-progress');
+        const visualProgressBar = visualElement.querySelector('.visual-progress-bar');
+
+        visualTotalLabel.textContent = String(visualTotal).padStart(2, '0');
+        visualProgress.setAttribute('aria-valuemax', String(visualTotal));
+
         const swiper = new Swiper('.hero-sec > .swiper', {
-            // Optional parameters
             direction: 'horizontal',
             loop: true,
-
-            // If we need pagination
-            pagination: {
-                el: '.visual .swiper-pagination',
-            },
-
-            // Navigation arrows
-            navigation: {
-                nextEl: '.visual .swiper-button-next',
-                prevEl: '.visual .swiper-button-prev',
-            },
-
-            // And if we need scrollbar
-            scrollbar: {
-                el: '.visual .swiper-scrollbar',
-            },
         });
+
+        const updateVisualControls = () => {
+            const current = swiper.realIndex + 1;
+            visualCurrent.textContent = String(current).padStart(2, '0');
+            visualProgressBar.style.width = `${(current / visualTotal) * 100}%`;
+            visualProgress.setAttribute('aria-valuenow', String(current));
+        };
+
+        visualElement.querySelector('.visual-prev').addEventListener('click', () => swiper.slidePrev());
+        visualElement.querySelector('.visual-next').addEventListener('click', () => swiper.slideNext());
+        swiper.on('slideChange', updateVisualControls);
+        updateVisualControls();
     </script>
     <script>
         // 상단 메뉴에 잠깐 머물렀을 때만 메가 메뉴를 펼칩니다.
