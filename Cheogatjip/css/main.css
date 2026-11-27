@@ -1695,6 +1695,7 @@ background: #fff;
 /* Newsletter four-card newsroom layout */
 .newsletter-article-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .newsletter-article-image-slot{position:relative;display:grid;place-items:center;aspect-ratio:4/3;min-height:150px;overflow:hidden;background:linear-gradient(135deg,#f2efec,#e7e1dc);color:#9b9189}
+.newsletter-article-image-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .newsletter-article-image-slot:before{content:"";position:absolute;inset:16px;border:1px dashed #c9beb5;border-radius:5px}
 .newsletter-article-image-slot span{position:relative;z-index:1;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.78);font-size:12px;font-weight:600}
 .newsletter-article-copy{padding:18px 18px 22px}
