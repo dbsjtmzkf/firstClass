@@ -400,7 +400,7 @@
         if (initialMenuTab) {
             const initialFilter = initialMenuTab.dataset.filter;
             document.querySelectorAll('.menu-card').forEach((card) => {
-                const categories = (card.dataset.categories || '').split(/\\s+/);
+                const categories = (card.dataset.categories || '').split(/\s+/);
                 card.hidden = !categories.includes(initialFilter);
             });
         }
