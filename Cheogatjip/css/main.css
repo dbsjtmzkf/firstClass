@@ -356,6 +356,7 @@ background: #fff;
     min-width: 0;
 }
 .site-header .nav-item > a {
+    cursor: pointer;
     display: flex;
     width: 100%;
     min-height: 54px;
@@ -423,6 +424,7 @@ background: #fff;
     border-right: 0;
 }
 .site-header .mega-menu-column a {
+    cursor: pointer;
     display: block;
     padding: 9px 8px;
     color: #555;
