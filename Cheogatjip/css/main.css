@@ -18,75 +18,73 @@ body {
     object-fit: cover;
 }
 
-/* 메인 배너 Swiper 컨트롤: Figma 참고 화면 기준 */
+/* 메인 배너: 번호와 진행 바 중심의 슬라이드 컨트롤 */
 .hero-sec .visual {
     position: relative;
 }
 
-/* 하단 중앙의 흰색 도트 + 빨간색 활성 도트 */
-.hero-sec .visual .swiper-pagination {
+.hero-sec .visual-controls {
     position: absolute;
-    right: 0;
-    bottom: 12px;
-    left: 0;
+    z-index: 10;
+    bottom: 22px;
+    left: clamp(20px, 5vw, 64px);
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-}
-
-.hero-sec .visual .swiper-pagination-bullet {
-    width: 14px;
-    height: 14px;
-    margin: 0 !important;
-    border-radius: 50%;
-    background: #fff;
-    opacity: 0.9;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.hero-sec .visual .swiper-pagination-bullet-active {
-    background: #ed1238;
-    opacity: 1;
-}
-
-/* 좌우 중앙의 얇은 흰색 화살표 */
-.hero-sec .visual .swiper-button-prev,
-.hero-sec .visual .swiper-button-next {
-    display: flex;
-    top: 50%;
-    width: 42px;
-    height: 64px;
-    margin-top: 0;
-    color: rgba(255, 255, 255, 0.8);
-    transform: translateY(-50%);
-    transition: color 0.2s ease, opacity 0.2s ease;
-}
-
-.hero-sec .visual .swiper-button-prev {
-    left: 24px;
-}
-
-.hero-sec .visual .swiper-button-next {
-    right: 24px;
-}
-
-.hero-sec .visual .swiper-button-prev::after,
-.hero-sec .visual .swiper-button-next::after {
-    font-family: swiper-icons;
-    font-size: 42px;
-    font-weight: 200;
-}
-
-.hero-sec .visual .swiper-button-prev:hover,
-.hero-sec .visual .swiper-button-next:hover {
+    gap: 18px;
+    width: min(540px, calc(100% - 40px));
     color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
 }
 
-/* 참고 화면에는 별도의 스크롤바가 보이지 않아 숨김 */
-.hero-sec .visual .swiper-scrollbar {
-    display: none;
+.hero-sec .visual-current,
+.hero-sec .visual-total {
+    flex: 0 0 auto;
+    min-width: 26px;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+
+.hero-sec .visual-progress {
+    position: relative;
+    flex: 1 1 auto;
+    height: 4px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, .42);
+}
+
+.hero-sec .visual-progress-bar {
+    display: block;
+    width: 25%;
+    height: 100%;
+    background: #fff;
+    transition: width .35s ease;
+}
+
+.hero-sec .visual-control-arrows {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-sec .visual-control-arrows button {
+    display: grid;
+    place-items: center;
+    width: 18px;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font: 300 28px/1 Arial, sans-serif;
+    cursor: pointer;
+    transition: opacity .2s ease;
+}
+
+.hero-sec .visual-control-arrows button:hover {
+    opacity: .65;
 }
 
 @media (max-width: 767px) {
@@ -94,37 +92,31 @@ body {
         height: auto;
     }
 
-    .hero-sec .visual .swiper-pagination {
-        bottom: 10px;
-        gap: 6px;
+    .hero-sec .visual-controls {
+        bottom: 12px;
+        left: 16px;
+        gap: 10px;
+        width: calc(100% - 32px);
+        font-size: 14px;
     }
 
-    .hero-sec .visual .swiper-pagination-bullet {
-        width: 8px;
-        height: 8px;
+    .hero-sec .visual-progress {
+        height: 3px;
     }
 
-    .hero-sec .visual .swiper-button-prev,
-    .hero-sec .visual .swiper-button-next {
-        width: 28px;
-        height: 44px;
+    .hero-sec .visual-control-arrows {
+        gap: 5px;
     }
 
-    .hero-sec .visual .swiper-button-prev {
-        left: 8px;
-    }
-
-    .hero-sec .visual .swiper-button-next {
-        right: 8px;
-    }
-
-    .hero-sec .visual .swiper-button-prev::after,
-    .hero-sec .visual .swiper-button-next::after {
-        font-size: 28px;
+    .hero-sec .visual-control-arrows button {
+        width: 14px;
+        height: 20px;
+        font-size: 22px;
     }
 }
 
 
+/* Header */
 /* Header */
 .site-header {
     position: relative;
