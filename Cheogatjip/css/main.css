@@ -1394,7 +1394,7 @@ background: #fff;
 }
 /* 영상 왼쪽 끝에는 이전 화살표 배치 */
 .webzine-prev {
-    left: 14px;
+    left: 0px;
 }
 .webzine-next {
     right: 14px;
@@ -1435,7 +1435,7 @@ background: #fff;
         font-size: 25px;
     }
     .webzine-prev {
-        left: 12px;
+        left: 0px;
     }
     .webzine-next {
         right: 12px;
