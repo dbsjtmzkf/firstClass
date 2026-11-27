@@ -393,6 +393,17 @@
                 });
             });
         });
+    
+        // 페이지 첫 로딩에서도 현재 활성 탭(기본: 추천)의 필터 적용
+        const initialMenuTab = document.querySelector('.menu-tab.is-active') ||
+            document.querySelector('.menu-tab[data-filter="recommend"]');
+        if (initialMenuTab) {
+            const initialFilter = initialMenuTab.dataset.filter;
+            document.querySelectorAll('.menu-card').forEach((card) => {
+                const categories = (card.dataset.categories || '').split(/\\s+/);
+                card.hidden = !categories.includes(initialFilter);
+            });
+        }
     </script>
 
     <script>
