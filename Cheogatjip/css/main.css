@@ -1806,3 +1806,16 @@ background: #fff;
 #wrap .site-header .mega-menu a * {
     cursor: pointer !important;
 }
+
+/* Force pointer cursor across the complete primary navigation hit area */
+#wrap .site-header .main-nav,
+#wrap .site-header .main-nav .nav-item,
+#wrap .site-header .main-nav .nav-item > a,
+#wrap .site-header .mega-menu,
+#wrap .site-header .mega-menu .mega-menu-column,
+#wrap .site-header .mega-menu .mega-menu-column > a {
+    cursor: pointer !important;
+}
+#wrap .site-header .main-nav .nav-item > a {
+    pointer-events: auto !important;
+}
