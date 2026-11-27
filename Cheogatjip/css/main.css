@@ -1796,3 +1796,13 @@ background: #fff;
 #wrap .webzine-section .webzine-more {
     border-radius: 999px;
 }
+
+/* Navigation links: force hand cursor on hover */
+#wrap .site-header .main-nav a,
+#wrap .site-header .mega-menu a {
+    cursor: pointer !important;
+}
+#wrap .site-header .main-nav a *,
+#wrap .site-header .mega-menu a * {
+    cursor: pointer !important;
+}
